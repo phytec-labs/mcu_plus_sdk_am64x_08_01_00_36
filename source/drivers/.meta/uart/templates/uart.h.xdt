@@ -1,0 +1,14 @@
+%%{
+    let module = system.modules['/drivers/uart/uart'];
+%%}
+/*
+ * UART
+ */
+#include <drivers/uart.h>
+
+/* UART Instance Macros */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+#define `instance.$name.toUpperCase()` (`i`U)
+% }
+#define CONFIG_UART_NUM_INSTANCES (`module.$instances.length`U)

@@ -1,0 +1,41 @@
+{
+    "name": "MCU_PLUS_SDK_AM64x",
+    "displayName": "MCU+ SDK for AM64x",
+    "version": "08.01.00",
+    "documentationPath": "../docs",
+    "includePaths": [
+        "../source",
+    ],
+    "components": [
+        "/kernel/dpl",
+        "/drivers/drivers",
+        "/board/board",
+        "/fs/fs",
+        "/networking/networking",
+        "/industrial_comms/industrial_comms",
+        "/security/security",
+        "/usb/usb",
+        "/motor_control/motor_control",
+    ],
+    "devices": [
+        "AM64x_beta",
+    ],
+    "contexts": {
+        "AM64x_beta": [
+            "r5fss0-0",
+            "r5fss0-1",
+            "r5fss1-0",
+            "r5fss1-1",
+            "m4fss0-0",
+            "a53ss0-0",
+        ],
+    },
+    "pinmuxUIOptions": {
+        "group": "merged",
+        "hidePeripheralTab": false,
+        "showPinTable": true,
+        "showSignals": true,
+        "showUsed": true
+    },
+    "minToolVersion" : "1.10.0"
+}

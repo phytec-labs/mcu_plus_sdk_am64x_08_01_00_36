@@ -1,0 +1,43 @@
+%%{
+    let module = system.modules['/drivers/mcspi/mcspi'];
+%%}
+/*
+ * MCSPI
+ */
+/* MCSPI atrributes */
+static MCSPI_Attrs gMcspiAttrs[CONFIG_MCSPI_NUM_INSTANCES] =
+{
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+    % let chMode = "SINGLE";
+    % if(config.mode == "MULTI_MASTER") {
+    %   chMode = "MULTI";
+    % }
+    {
+        .baseAddr           = `config.baseAddr`,
+        .inputClkFreq       = `config.inputClkFreq`U,
+        .intrNum            = `config.intrNum`,
+        .intrEnable         = `config.intrEnable.toString(10).toUpperCase()`,
+        .intrPriority       = `config.intrPriority`U,
+        .chMode             = MCSPI_CH_MODE_`chMode`,
+        .pinMode            = MCSPI_PINMODE_`config.pinMode`PIN,
+        .initDelay          = MCSPI_INITDLY_`config.initDelay`,
+    },
+% }
+};
+/* MCSPI objects - initialized by the driver */
+static MCSPI_Object gMcspiObjects[CONFIG_MCSPI_NUM_INSTANCES];
+/* MCSPI driver configuration */
+MCSPI_Config gMcspiConfig[CONFIG_MCSPI_NUM_INSTANCES] =
+{
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    {
+        &gMcspiAttrs[`instance.$name.toUpperCase()`],
+        &gMcspiObjects[`instance.$name.toUpperCase()`],
+    },
+% }
+};
+
+uint32_t gMcspiConfigNum = CONFIG_MCSPI_NUM_INSTANCES;

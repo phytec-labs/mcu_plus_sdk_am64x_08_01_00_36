@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['registercpmcall_12679',['registerCpmCall',['../iPNLegacy_8h.html#af3f98053f92e7d20241dc28db7a5806b',1,'iPNLegacy.h']]],
+  ['registerstatcall_12680',['registerStatCall',['../iPNLegacy_8h.html#a27b19c94225bd950734b9212d184cf0c',1,'iPNLegacy.h']]],
+  ['relppmbuff_12681',['relPpmBuff',['../iPNLegacy_8h.html#a470eeb194f76ed584acf9e907d7e0ca0',1,'iPNLegacy.h']]],
+  ['rpmessage_5fannounce_12682',['RPMessage_announce',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga765b5dc385428277e0f0ce8f374e5f47',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fconstruct_12683',['RPMessage_construct',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga3f4755622a1a85b816b156f11ab126e3',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fcontrolendptcallback_12684',['RPMessage_controlEndPtCallback',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga041facc97d3b95f0d07d9d3e0ce8b55e',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fcreateparams_5finit_12685',['RPMessage_CreateParams_init',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga243ad0c7f5653e91410566c5d548d6f1',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fdeinit_12686',['RPMessage_deInit',['../group__DRV__IPC__RPMESSAGE__MODULE.html#gaf7eed37da5b4e1879ba58488af2cbe54',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fdestruct_12687',['RPMessage_destruct',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga7817f068fc1080aad7a6947079e73f9e',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fgetlocalendpt_12688',['RPMessage_getLocalEndPt',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga3f5a806cd00de417cf067f324e221ef8',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5finit_12689',['RPMessage_init',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga11518ab5595c5ac2d1233e946fa89536',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fparams_5finit_12690',['RPMessage_Params_init',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga353a4139549fa6733571cc3189b658bd',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5frecv_12691',['RPMessage_recv',['../group__DRV__IPC__RPMESSAGE__MODULE.html#gaff81ed42f1cbf0d5118bafef6a0b7add',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fsend_12692',['RPMessage_send',['../group__DRV__IPC__RPMESSAGE__MODULE.html#gaa1b08e6316921caa469982a34c06841b',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5funblock_12693',['RPMessage_unblock',['../group__DRV__IPC__RPMESSAGE__MODULE.html#gacfb174282fa8ab0f20812df2f1d7ef69',1,'ipc_rpmsg.h']]],
+  ['rpmessage_5fwaitforlinuxready_12694',['RPMessage_waitForLinuxReady',['../group__DRV__IPC__RPMESSAGE__MODULE.html#ga6a1f6307291e52b3221887ef299fd9e8',1,'ipc_rpmsg.h']]],
+  ['rtcdisableisr_12695',['rtcDisableISR',['../iPNLegacy_8h.html#adac4b8ddfb3ca28d178e5a958ef6136e',1,'iPNLegacy.h']]]
+];

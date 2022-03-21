@@ -1,0 +1,72 @@
+%%{
+    let common = system.getScript("/common");
+    let module = system.modules['/drivers/bootloader/bootloader'];
+
+    let isFlashBoot = false;
+    let isMMCSDBoot = false;
+    for(let i = 0; i < module.$instances.length; i++) {
+        if(module.$instances[i].bootMedia == "FLASH") {
+            isFlashBoot = true;
+            break;
+        }
+        if(module.$instances[i].bootMedia == "EMMC") {
+            isMMCSDBoot = true;
+            break;
+        }
+    }
+%%}
+/*
+ * BOOTLOADER
+ */
+% if(isFlashBoot){
+/* Include ti_board_config.h for flash config macros */
+#include "ti_board_config.h"
+%}
+% if(isMMCSDBoot) {
+#include "drivers/bootloader/bootloader_mmcsd_raw.h"
+% }
+
+/* Bootloader boot media specific arguments */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+        % if(instance.bootMedia == "EMMC") {
+Bootloader_MmcsdArgs gBootloader`i`Args =
+        % } else {
+Bootloader_`common.camelSentence(instance.bootMedia)`Args gBootloader`i`Args =
+        % }
+{
+    % if(instance.bootMedia == "FLASH") {
+    .flashIndex     = `instance.flashDriver.$name.toUpperCase()`,
+    .curOffset      = 0,
+    .appImageOffset = `instance.appImageOffset`,
+    % }
+    % else if(instance.bootMedia == "MEM") {
+    .curOffset        = 0,
+    .appImageBaseAddr = `instance.appImageBaseAddress`,
+    % }
+    % else if(instance.bootMedia == "EMMC") {
+    .MMCSDIndex      = `instance.MMCSDDriver.$name.toUpperCase()`,
+    .curOffset      = 0,
+    .appImageOffset = `instance.EMMCAppImageOffset`,
+    % }
+};
+% }
+
+/* Bootloader driver configuration */
+Bootloader_Config gBootloaderConfig[CONFIG_BOOTLOADER_NUM_INSTANCES] =
+{
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    {
+    % if(module.$instances[i].bootMedia == "EMMC") {
+        &gBootloaderMmcsdFxns,
+        &gBootloader`i`Args,
+    % } else {
+        &gBootloader`common.camelSentence(instance.bootMedia)`Fxns,
+        &gBootloader`i`Args,
+    % }
+    },
+% }
+};
+
+uint32_t gBootloaderConfigNum = CONFIG_BOOTLOADER_NUM_INSTANCES;

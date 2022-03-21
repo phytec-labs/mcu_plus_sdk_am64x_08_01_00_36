@@ -1,0 +1,41 @@
+%%{
+    let common = system.getScript("/common");
+    let module = system.modules['/security/crypto/crypto'];
+%%}
+/*
+ * Crypto
+ */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+%if (instance.enableSw == true) {
+#include <security/crypto/sw/crypto_`config.name.toLowerCase()`_sw.h>
+% }
+%if (instance.enableHw == true) {
+#include <security/crypto/hw/crypto_`config.name.toLowerCase()`_hw.h>
+% }
+% }
+
+/* Crypto driver configuration */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+    % let name = common.camelSentence(config.name);
+Crypto_`name`Config gCrypto`name`Config[CRYPTO_NUM_TYPE] =
+{
+    {
+%if (instance.enableSw == true) {
+        .fxns = &gCrypto`name`SwFxns,
+% } else {
+        .fxns = NULL,
+% }
+    },
+    {
+%if (instance.enableHw == true) {
+        .fxns = &gCrypto`name`HwFxns,
+% } else {
+        .fxns = NULL,
+% }
+    },
+};
+% }

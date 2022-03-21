@@ -1,0 +1,216 @@
+#
+# Auto generated makefile - DO NOT MODIFY
+#
+
+export MCU_PLUS_SDK_PATH?=$(abspath ../../..)
+include $(MCU_PLUS_SDK_PATH)/imports.mak
+
+CG_TOOL_ROOT=$(CGT_TI_ARM_CLANG_PATH)
+
+CC=$(CGT_TI_ARM_CLANG_PATH)/bin/tiarmclang
+AR=$(CGT_TI_ARM_CLANG_PATH)/bin/tiarmar
+
+PROFILE?=release
+ConfigName:=$(PROFILE)
+
+LIBNAME:=enet-lwip.am64x.r5f.ti-arm-clang.$(PROFILE).lib
+
+FILES_common := \
+    enet.c \
+    enet_trace.c \
+    enet_utils.c \
+    enet_osal.c \
+    enet_queue.c \
+    enet_rm.c \
+    enet_osal_dflt.c \
+    enet_utils_dflt.c \
+    enet_phymdio_dflt.c \
+    mod_null.c \
+    mdio.c \
+    cpsw_macport.c \
+    cpsw_macport_intervlan.c \
+    cpsw_hostport.c \
+    cpsw_ale.c \
+    cpsw_stats.c \
+    cpsw_cpts.c \
+    per_null.c \
+    cpsw_intervlan.c \
+    cpsw.c \
+    enet_hostport.c \
+    enet_udma.c \
+    enet_udma_priv.c \
+    csl_cpgmac_sl.c \
+    csl_cpsw.c \
+    csl_cpsw_ss.c \
+    csl_cpsw_ale_4g_tblcfg.c \
+    csl_cpsw_ale_9g_tblcfg.c \
+    csl_cpts.c \
+    csl_mdio.c \
+    icssg.c \
+    icssg_utils.c \
+    icssg_timesync.c \
+    icssg_stats.c \
+    k3_soc.c \
+    enet_soc.c \
+    enet_soc_icssg_mem.c \
+    enetphy.c \
+    generic_phy.c \
+    dp83867.c \
+    dp83869.c \
+    dp83822.c \
+    vsc8514.c \
+    enet_board_cfg.c \
+    enet_apputils.c \
+    enet_appmemutils.c \
+    enet_appethpatterns.c \
+    enet_appsoc.c \
+    enet_apprmcfg.c \
+    enet_udmautils.c \
+    enet_ioctlutils.c \
+    enet_apputils_k3.c \
+    enet_appboardutils.c \
+    enet_app_cpsw_cfg.c \
+    enet_app_per_cfg.c \
+    enet_app_memutils_cfg.c \
+    enet_mcm.c \
+    lwip2enet.c \
+    lwip2lwipif.c \
+    lwipifcb.c \
+    default_netif.c \
+    pbufQ.c \
+
+FILES_PATH_common = \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/core \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/mod \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/per \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/per/V1 \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/common \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/dma/udma \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/emac/V5/priv \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpsw/V5/V5_0/priv \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpsw/V5/priv \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpts/V0/priv \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/mdio/V5/priv \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/soc/k3 \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/soc/k3/am64x_am243x \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/phy \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/utils \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/utils/V3 \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/utils/defcfg \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/board/src \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/board/src/am64x_am243x_evm \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/lwipif/src \
+    ${MCU_PLUS_SDK_PATH}/source/networking/enet/core/lwipif/src/V1 \
+
+INCLUDES_common := \
+    -I${CG_TOOL_ROOT}/include/c \
+    -I${MCU_PLUS_SDK_PATH}/source \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/utils/include \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/utils/V3 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/include \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/include/core \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/include/phy \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/src/phy \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/hw_include \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/emac/V5 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpsw/V5 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpsw/V5/V5_0 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/cpts/V0 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/hw_include/mdio/V5 \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/board \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/board/src/am64x_am243x_evm/include \
+    -I${MCU_PLUS_SDK_PATH}/source/kernel/freertos/FreeRTOS-Kernel/include \
+    -I${MCU_PLUS_SDK_PATH}/source/kernel/freertos/portable/TI_ARM_CLANG/ARM_CR5F \
+    -I${MCU_PLUS_SDK_PATH}/source/kernel/freertos/config/am64x/r5f \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/enet/core/lwipif/inc \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/lwip/lwip-config/am64x \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/lwip/lwip-port/freertos/include \
+    -I${MCU_PLUS_SDK_PATH}/source/networking/lwip/lwip-stack/src/include \
+
+DEFINES_common := \
+    -DSOC_AM64X \
+    -DMAKEFILE_BUILD \
+    -DBUILD_MCU1_0 \
+    -DBUILD_MCU \
+    -DENET_CFG_ASSERT=1 \
+    -DENET_CFG_PRINT_ENABLE \
+    -DENET_CFG_TRACE_LEVEL=3 \
+    -DENET_ENABLE_ICSSG \
+    -Dam64x_am243x_evm \
+    -DENABLE_ENET_LOG \
+
+CFLAGS_common := \
+    -mcpu=cortex-r5 \
+    -mfloat-abi=hard \
+    -mfpu=vfpv3-d16 \
+    -Wall \
+    -Werror \
+    -g \
+    -Wno-gnu-variable-sized-type-not-at-end \
+    -Wno-unused-function \
+    -mno-unaligned-access \
+    -Wno-extra \
+
+CFLAGS_debug := \
+    -D_DEBUG_=1 \
+
+CFLAGS_release := \
+    -Os \
+
+ARFLAGS_common := \
+    rc \
+
+FILES := $(FILES_common) $(FILES_$(PROFILE))
+ASMFILES := $(ASMFILES_common) $(ASMFILES_$(PROFILE))
+FILES_PATH := $(FILES_PATH_common) $(FILES_PATH_$(PROFILE))
+CFLAGS := $(CFLAGS_common) $(CFLAGS_$(PROFILE))
+DEFINES := $(DEFINES_common) $(DEFINES_$(PROFILE))
+INCLUDES := $(INCLUDES_common) $(INCLUDE_$(PROFILE))
+ARFLAGS := $(ARFLAGS_common) $(ARFLAGS_$(PROFILE))
+
+LIBDIR := lib
+OBJDIR := obj/am64x/ti-arm-clang/$(PROFILE)/r5f/enet-lwip/
+OBJS := $(FILES:%.c=%.obj)
+OBJS += $(ASMFILES:%.S=%.obj)
+DEPS := $(FILES:%.c=%.d)
+
+vpath %.obj $(OBJDIR)
+vpath %.c $(FILES_PATH)
+vpath %.S $(FILES_PATH)
+
+$(OBJDIR)/%.obj %.obj: %.c
+	@echo  Compiling: $(LIBNAME): $<
+	$(CC) -c $(CFLAGS) $(INCLUDES) $(DEFINES) -MMD -o $(OBJDIR)/$@ $<
+
+$(OBJDIR)/%.obj %.obj: %.S
+	@echo  Compiling: $(LIBNAME): $<
+	$(CC) -c $(CFLAGS) -o $(OBJDIR)/$@ $<
+
+all: $(LIBDIR)/$(LIBNAME)
+
+$(LIBDIR)/$(LIBNAME): $(OBJS) | $(LIBDIR)
+	@echo  .
+	@echo  Archiving: $(LIBNAME) to $@ ...
+	$(AR) $(ARFLAGS) $@ $(addprefix $(OBJDIR), $(OBJS))
+	@echo  Archiving: $(LIBNAME) Done !!!
+	@echo  .
+
+clean:
+	@echo  Cleaning: $(LIBNAME) ...
+	$(RMDIR) $(OBJDIR)
+	$(RM) $(LIBDIR)/$(LIBNAME)
+
+scrub:
+	@echo  Scrubing: $(LIBNAME) ...
+	-$(RMDIR) obj/
+	-$(RMDIR) lib/
+
+$(OBJS): | $(OBJDIR)
+
+$(LIBDIR) $(OBJDIR):
+	$(MKDIR) $@
+
+-include $(addprefix $(OBJDIR)/, $(DEPS))

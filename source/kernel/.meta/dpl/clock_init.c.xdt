@@ -1,0 +1,14 @@
+%%{
+    let module = system.modules['/kernel/dpl/clock'];
+    let instance = module.$static;
+    let config = module.getInstanceConfig(instance);
+    let lockUnLockArgs = module.getInstanceConfig(instance);
+%%}
+% if (! config.disableClkSourceConfig) {
+    /* set timer clock source */
+    SOC_controlModuleUnlockMMR(`config.lockUnlockDomain`, `config.lockUnlockPartition`);
+    *(volatile uint32_t*)(`config.name`_CLOCK_SRC_MUX_ADDR) = `config.name`_CLOCK_SRC_`config.clkSource`;
+    SOC_controlModuleLockMMR(`config.lockUnlockDomain`, `config.lockUnlockPartition`);
+% }
+    /* initialize Clock */
+    ClockP_init();

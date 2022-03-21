@@ -1,0 +1,196 @@
+#
+# Auto generated makefile - DO NOT MODIFY
+#
+
+export MCU_PLUS_SDK_PATH?=$(abspath ../..)
+include $(MCU_PLUS_SDK_PATH)/imports.mak
+
+CG_TOOL_ROOT=$(CGT_TI_ARM_CLANG_PATH)
+
+CC=$(CGT_TI_ARM_CLANG_PATH)/bin/tiarmclang
+AR=$(CGT_TI_ARM_CLANG_PATH)/bin/tiarmar
+
+PROFILE?=release
+ConfigName:=$(PROFILE)
+
+LIBNAME:=security.am64x.r5f.ti-arm-clang.$(PROFILE).lib
+
+FILES_common := \
+    sa2ul.c \
+    crypto.c \
+    crypto_sha.c \
+    crypto_sha_sw.c \
+    crypto_aes.c \
+    crypto_aes_sw.c \
+    crypto_sha_hw.c \
+    crypto_aes_cmac_sw.c \
+    crypto_hmac_sha_sw.c \
+    aes.c \
+    sha512.c \
+    cipher.c \
+    cmac.c \
+    aesni.c \
+    aria.c \
+    asn1parse.c \
+    asn1write.c \
+    base64.c \
+    bignum.c \
+    camellia.c \
+    ccm.c \
+    chacha20.c \
+    chachapoly.c \
+    cipher_wrap.c \
+    ctr_drbg.c \
+    debug.c \
+    des.c \
+    dhm.c \
+    ecdh.c \
+    ecjpake.c \
+    ecp.c \
+    ecp_curves.c \
+    entropy.c \
+    gcm.c \
+    hkdf.c \
+    hmac_drbg.c \
+    md.c \
+    md5.c \
+    memory_buffer_alloc.c \
+    mps_reader.c \
+    mps_trace.c \
+    nist_kw.c \
+    oid.c \
+    padlock.c \
+    pem.c \
+    pk.c \
+    pk_wrap.c \
+    pkcs5.c \
+    pkcs12.c \
+    pkparse.c \
+    pkwrite.c \
+    platform.c \
+    platform_util.c \
+    poly1305.c \
+    psa_crypto.c \
+    psa_crypto_aead.c \
+    psa_crypto_cipher.c \
+    psa_crypto_client.c \
+    psa_crypto_driver_wrappers.c \
+    psa_crypto_ecp.c \
+    psa_crypto_hash.c \
+    psa_crypto_mac.c \
+    psa_crypto_rsa.c \
+    psa_crypto_se.c \
+    psa_crypto_slot_management.c \
+    psa_crypto_storage.c \
+    psa_its_file.c \
+    ripemd160.c \
+    rsa.c \
+    rsa_alt_helpers.c \
+    sha1.c \
+    sha256.c \
+    ssl_cache.c \
+    ssl_ciphersuites.c \
+    ssl_cli.c \
+    ssl_cookie.c \
+    ssl_msg.c \
+    ssl_srv.c \
+    ssl_ticket.c \
+    ssl_tls.c \
+    ssl_tls13_keys.c \
+    threading.c \
+    version.c \
+    x509.c \
+    x509_create.c \
+    x509_crl.c \
+    x509_csr.c \
+    x509write_crt.c \
+    x509write_csr.c \
+
+FILES_PATH_common = \
+    sa2ul \
+    crypto \
+    crypto/sw \
+    crypto/hw \
+    mbedtls/mbedtls-stack/library \
+
+INCLUDES_common := \
+    -I${CG_TOOL_ROOT}/include/c \
+    -I${MCU_PLUS_SDK_PATH}/source \
+    -I${MCU_PLUS_SDK_PATH}/source/security/mbedtls/mbedtls-stack/library \
+    -I${MCU_PLUS_SDK_PATH}/source/security/mbedtls/mbedtls-stack/include \
+
+DEFINES_common := \
+    -DSOC_AM64X \
+
+CFLAGS_common := \
+    -mcpu=cortex-r5 \
+    -mfloat-abi=hard \
+    -mfpu=vfpv3-d16 \
+    -Wall \
+    -Werror \
+    -g \
+    -Wno-gnu-variable-sized-type-not-at-end \
+    -Wno-unused-function \
+    -mno-unaligned-access \
+    -Wno-extra \
+
+CFLAGS_debug := \
+    -D_DEBUG_=1 \
+
+CFLAGS_release := \
+    -Os \
+
+ARFLAGS_common := \
+    rc \
+
+FILES := $(FILES_common) $(FILES_$(PROFILE))
+ASMFILES := $(ASMFILES_common) $(ASMFILES_$(PROFILE))
+FILES_PATH := $(FILES_PATH_common) $(FILES_PATH_$(PROFILE))
+CFLAGS := $(CFLAGS_common) $(CFLAGS_$(PROFILE))
+DEFINES := $(DEFINES_common) $(DEFINES_$(PROFILE))
+INCLUDES := $(INCLUDES_common) $(INCLUDE_$(PROFILE))
+ARFLAGS := $(ARFLAGS_common) $(ARFLAGS_$(PROFILE))
+
+LIBDIR := lib
+OBJDIR := obj/am64x/ti-arm-clang/$(PROFILE)/r5f/security/
+OBJS := $(FILES:%.c=%.obj)
+OBJS += $(ASMFILES:%.S=%.obj)
+DEPS := $(FILES:%.c=%.d)
+
+vpath %.obj $(OBJDIR)
+vpath %.c $(FILES_PATH)
+vpath %.S $(FILES_PATH)
+
+$(OBJDIR)/%.obj %.obj: %.c
+	@echo  Compiling: $(LIBNAME): $<
+	$(CC) -c $(CFLAGS) $(INCLUDES) $(DEFINES) -MMD -o $(OBJDIR)/$@ $<
+
+$(OBJDIR)/%.obj %.obj: %.S
+	@echo  Compiling: $(LIBNAME): $<
+	$(CC) -c $(CFLAGS) -o $(OBJDIR)/$@ $<
+
+all: $(LIBDIR)/$(LIBNAME)
+
+$(LIBDIR)/$(LIBNAME): $(OBJS) | $(LIBDIR)
+	@echo  .
+	@echo  Archiving: $(LIBNAME) to $@ ...
+	$(AR) $(ARFLAGS) $@ $(addprefix $(OBJDIR), $(OBJS))
+	@echo  Archiving: $(LIBNAME) Done !!!
+	@echo  .
+
+clean:
+	@echo  Cleaning: $(LIBNAME) ...
+	$(RMDIR) $(OBJDIR)
+	$(RM) $(LIBDIR)/$(LIBNAME)
+
+scrub:
+	@echo  Scrubing: $(LIBNAME) ...
+	-$(RMDIR) obj/
+	-$(RMDIR) lib/
+
+$(OBJS): | $(OBJDIR)
+
+$(LIBDIR) $(OBJDIR):
+	$(MKDIR) $@
+
+-include $(addprefix $(OBJDIR)/, $(DEPS))

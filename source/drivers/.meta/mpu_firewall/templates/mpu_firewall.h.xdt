@@ -1,0 +1,21 @@
+%%{
+    let common = system.getScript("/common");
+    let soc = system.getScript(`/drivers/soc/drivers_${common.getSocName()}`);
+    let driverVer = soc.getDriverVer("mpu_firewall");
+    let module = system.modules['/drivers/mpu_firewall/mpu_firewall'];
+    let module_reg = system.modules[`/drivers/mpu_firewall/${driverVer}/mpu_firewall_v0_region`];
+%%}
+/*
+ * MPU Firewall
+ */
+#include <drivers/mpu_firewall.h>
+
+/* MPU Firewall Macros */
+% var regionCount = 0
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let region_instances = instance.mpu_region;
+    % regionCount += region_instances.length;
+% }
+#define CONFIG_MPU_FIREWALL_NUM_REGIONS (`regionCount`U)
+

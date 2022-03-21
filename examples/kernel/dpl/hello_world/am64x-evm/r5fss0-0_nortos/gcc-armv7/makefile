@@ -1,0 +1,260 @@
+#
+# Auto generated makefile - DO NOT MODIFY
+#
+
+export MCU_PLUS_SDK_PATH?=$(abspath ../../../../../../..)
+include $(MCU_PLUS_SDK_PATH)/imports.mak
+
+CG_TOOL_ROOT=$(CGT_GCC_ARMV7_PATH)
+
+CC=$(CG_TOOL_ROOT)/bin/arm-none-eabi-gcc
+LNK=$(CG_TOOL_ROOT)/bin/arm-none-eabi-gcc
+STRIP=$(CG_TOOL_ROOT)/bin/arm-none-eabi-strip
+OBJCOPY=$(CG_TOOL_ROOT)/bin/arm-none-eabi-objcopy
+
+PROFILE?=release
+ConfigName:=$(PROFILE)
+
+OUTNAME:=hello_world.$(PROFILE).out
+
+BOOTIMAGE_PATH=$(abspath .)
+BOOTIMAGE_NAME:=hello_world.$(PROFILE).appimage
+BOOTIMAGE_NAME_XIP:=hello_world.$(PROFILE).appimage_xip
+BOOTIMAGE_NAME_SIGNED:=hello_world.$(PROFILE).appimage.signed
+BOOTIMAGE_RPRC_NAME:=hello_world.$(PROFILE).rprc
+BOOTIMAGE_RPRC_NAME_XIP:=hello_world.$(PROFILE).rprc_xip
+BOOTIMAGE_RPRC_NAME_TMP:=hello_world.$(PROFILE).rprc_tmp
+
+FILES_common := \
+	hello_world.c \
+	main.c \
+	ti_drivers_config.c \
+	ti_drivers_open_close.c \
+	ti_board_config.c \
+	ti_board_open_close.c \
+	ti_dpl_config.c \
+	ti_pinmux_config.c \
+	ti_power_clock_config.c \
+
+FILES_PATH_common = \
+	.. \
+	../../.. \
+	generated \
+
+INCLUDES_common := \
+	-I${MCU_PLUS_SDK_PATH}/source \
+	-Igenerated \
+
+DEFINES_common := \
+	-DSOC_AM64X \
+
+CFLAGS_common := \
+	-mcpu=cortex-r5 \
+	-mfloat-abi=hard \
+	-mfpu=vfpv3-d16 \
+	-marm \
+	-Wall \
+	-Werror \
+	-g \
+	-Wno-gnu-variable-sized-type-not-at-end \
+	-Wno-unused-function \
+	-Wno-int-to-pointer-cast \
+	-Wno-pointer-to-int-cast \
+	-Wno-unused-but-set-variable \
+	-fdata-sections \
+	-ffunction-sections \
+
+CFLAGS_debug := \
+	-D_DEBUG_=1 \
+
+CFLAGS_release := \
+	-O2 \
+
+LNK_FILES_common = \
+	linker.cmd \
+
+LIBS_PATH_common = \
+	-L${MCU_PLUS_SDK_PATH}/source/kernel/nortos/lib \
+	-L${MCU_PLUS_SDK_PATH}/source/drivers/lib \
+	-L${MCU_PLUS_SDK_PATH}/source/board/lib \
+	-L${CGT_GCC_ARMV7_PATH}/lib \
+
+LIBS_common = \
+	-l:nortos.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+	-l:drivers.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+	-l:board.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+
+LFLAGS_common = \
+	-mcpu=cortex-r5 \
+	-mfloat-abi=hard \
+	-mfpu=vfpv3-d16 \
+	-marm \
+	-Wl,-static \
+	-Wl,--gc-sections \
+	-Wl,--build-id=none \
+	-lstdc++ \
+	-lgcc \
+	-lm \
+	-lc \
+	-lnosys \
+
+LIBS_NAME = \
+	nortos.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+	drivers.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+	board.am64x.r5f.gcc-armv7.${ConfigName}.lib \
+
+LIBS_PATH_NAME = \
+	${MCU_PLUS_SDK_PATH}/source/kernel/nortos/lib \
+	${MCU_PLUS_SDK_PATH}/source/drivers/lib \
+	${MCU_PLUS_SDK_PATH}/source/board/lib \
+	${CGT_GCC_ARMV7_PATH}/lib \
+
+FILES := $(FILES_common) $(FILES_$(PROFILE))
+ASMFILES := $(ASMFILES_common) $(ASMFILES_$(PROFILE))
+FILES_PATH := $(FILES_PATH_common) $(FILES_PATH_$(PROFILE))
+CFLAGS := $(CFLAGS_common) $(CFLAGS_$(PROFILE))
+DEFINES := $(DEFINES_common) $(DEFINES_$(PROFILE))
+INCLUDES := $(INCLUDES_common) $(INCLUDE_$(PROFILE))
+LIBS := $(LIBS_common) $(LIBS_$(PROFILE))
+LIBS_PATH := $(LIBS_PATH_common) $(LIBS_PATH_$(PROFILE))
+LFLAGS := $(LFLAGS_common) $(LFLAGS_$(PROFILE))
+LNK_FILES := $(LNK_FILES_common) $(LNK_FILES_$(PROFILE))
+
+OBJDIR := obj/$(PROFILE)/
+OBJS := $(FILES:%.c=%.obj)
+OBJS += $(ASMFILES:%.S=%.obj)
+DEPS := $(FILES:%.c=%.d)
+
+vpath %.obj $(OBJDIR)
+vpath %.c $(FILES_PATH)
+vpath %.S $(FILES_PATH)
+vpath %.lib $(LIBS_PATH_NAME)
+vpath %.a $(LIBS_PATH_NAME)
+
+$(OBJDIR)/%.obj %.obj: %.c
+	@echo  Compiling: am64x:r5fss0-0:nortos:gcc-armv7 $(OUTNAME): $<
+	$(CC) -c $(CFLAGS) $(INCLUDES) $(DEFINES) -MMD -MT $@ -o $(OBJDIR)/$@ $<
+
+$(OBJDIR)/%.obj %.obj: %.S
+	@echo  Compiling: am64x:r5fss0-0:nortos:gcc-armv7 $(LIBNAME): $<
+	$(CC) -c -x assembler-with-cpp $(CFLAGS) $(INCLUDES) $(DEFINES) -o $(OBJDIR)$@ $<
+
+all: $(BOOTIMAGE_NAME)
+
+SYSCFG_GEN_FILES=generated/ti_drivers_config.c generated/ti_drivers_config.h
+SYSCFG_GEN_FILES+=generated/ti_drivers_open_close.c generated/ti_drivers_open_close.h
+SYSCFG_GEN_FILES+=generated/ti_dpl_config.c generated/ti_dpl_config.h
+SYSCFG_GEN_FILES+=generated/ti_pinmux_config.c generated/ti_power_clock_config.c
+SYSCFG_GEN_FILES+=generated/ti_board_config.c generated/ti_board_config.h
+SYSCFG_GEN_FILES+=generated/ti_board_open_close.c generated/ti_board_open_close.h
+
+$(OUTNAME): syscfg $(SYSCFG_GEN_FILES) $(OBJS) $(LNK_FILES) $(LIBS_NAME)
+	@echo  .
+	@echo  Linking: am64x:r5fss0-0:nortos:gcc-armv7 $@ ...
+	$(LNK) $(LIBS_PATH) -Wl,-Map=$(OUTNAME:%.out=%.map) -o $@ -Wl,--start-group $(LFLAGS) $(addprefix $(OBJDIR), $(OBJS)) $(LIBS) -Wl,--end-group -Wl,-T,$(LNK_FILES)
+	@echo  Linking: am64x:r5fss0-0:nortos:gcc-armv7 $@ Done !!!
+	@echo  .
+
+clean:
+	@echo  Cleaning: am64x:r5fss0-0:nortos:gcc-armv7 $(OUTNAME) ...
+	$(RMDIR) $(OBJDIR)
+	$(RM) $(OUTNAME)
+	$(RM) $(BOOTIMAGE_NAME)
+	$(RM) $(BOOTIMAGE_NAME_XIP)
+	$(RM) $(BOOTIMAGE_NAME_SIGNED)
+	$(RM) $(BOOTIMAGE_RPRC_NAME)
+	$(RM) $(BOOTIMAGE_RPRC_NAME_XIP)
+	$(RMDIR) generated/
+
+scrub:
+	@echo  Scrubing: am64x:r5fss0-0:nortos:gcc-armv7 hello_world ...
+	$(RMDIR) obj
+ifeq ($(OS),Windows_NT)
+	$(RM) \*.out
+	$(RM) \*.map
+	$(RM) \*.appimage*
+	$(RM) \*.rprc*
+	$(RM) \*.tiimage
+	$(RM) \*.bin
+else
+	$(RM) *.out
+	$(RM) *.map
+	$(RM) *.appimage*
+	$(RM) *.rprc*
+	$(RM) *.tiimage
+	$(RM) *.bin
+endif
+	$(RMDIR) generated
+
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	$(MKDIR) $@
+
+
+.NOTPARALLEL:
+
+.INTERMEDIATE: syscfg
+$(SYSCFG_GEN_FILES): syscfg
+
+syscfg: ../example.syscfg
+	@echo Generating SysConfig files ...
+	$(SYSCFG_NODE) $(SYSCFG_CLI_PATH)/dist/cli.js --product $(SYSCFG_SDKPRODUCT) --context r5fss0-0 --part Default --package ALV --output generated/ ../example.syscfg
+
+syscfg-gui:
+	$(SYSCFG_NWJS) $(SYSCFG_PATH) --product $(SYSCFG_SDKPRODUCT) --device AM64x_beta --context r5fss0-0 --part Default --package ALV --output generated/  ../example.syscfg
+
+#
+# Generation of boot image which can be loaded by Secondary Boot Loader (SBL)
+#
+ifeq ($(OS),Windows_NT)
+EXE_EXT=.exe
+endif
+ifeq ($(OS),Windows_NT)
+  BOOTIMAGE_CERT_GEN_CMD=powershell -executionpolicy unrestricted -command $(MCU_PLUS_SDK_PATH)/tools/boot/signing/x509CertificateGen.ps1
+else
+  BOOTIMAGE_CERT_GEN_CMD=$(MCU_PLUS_SDK_PATH)/tools/boot/signing/x509CertificateGen.sh
+endif
+BOOTIMAGE_TEMP_OUT_FILE=temp_stdout_$(PROFILE).txt
+
+BOOTIMAGE_CORE_ID_a53ss0-0 = 0
+BOOTIMAGE_CORE_ID_r5fss0-0 = 4
+BOOTIMAGE_CORE_ID_r5fss0-1 = 5
+BOOTIMAGE_CORE_ID_r5fss1-0 = 6
+BOOTIMAGE_CORE_ID_r5fss1-1 = 7
+BOOTIMAGE_CORE_ID_m4fss0-0 = 14
+SBL_RUN_ADDRESS=0x70000000
+SBL_DEV_ID=55
+
+MULTI_CORE_IMAGE_GEN=$(MCU_PLUS_SDK_PATH)/tools/boot/multicoreImageGen/MulticoreImageGen$(EXE_EXT)
+OUTRPRC_PATH=$(MCU_PLUS_SDK_PATH)/tools/boot/out2rprc/out2rprc.exe
+ifeq ($(OS),Windows_NT)
+  OUTRPRC_CMD=$(OUTRPRC_PATH)
+  XIPGEN_CMD=$(MCU_PLUS_SDK_PATH)/tools/boot/xipGen/xipGen.exe
+else
+  OUTRPRC_CMD=mono $(OUTRPRC_PATH)
+  XIPGEN_CMD=$(MCU_PLUS_SDK_PATH)/tools/boot/xipGen/xipGen.out
+endif
+
+MULTI_CORE_IMAGE_PARAMS = \
+	$(BOOTIMAGE_CORE_ID_r5fss0-0) $(BOOTIMAGE_RPRC_NAME) \
+
+MULTI_CORE_IMAGE_PARAMS_XIP = \
+	$(BOOTIMAGE_CORE_ID_r5fss0-0) $(BOOTIMAGE_RPRC_NAME_XIP) \
+
+$(BOOTIMAGE_NAME): $(OUTNAME)
+	@echo  Boot image: am64x:r5fss0-0:nortos:gcc-armv7 $(BOOTIMAGE_PATH)/$@ ...
+ifneq ($(OS),Windows_NT)
+	$(CHMOD) a+x $(MULTI_CORE_IMAGE_GEN)
+	$(CHMOD) a+x $(XIPGEN_CMD)
+endif
+	$(OUTRPRC_CMD) $(OUTNAME) $(BOOTIMAGE_RPRC_NAME_TMP) >> $(BOOTIMAGE_TEMP_OUT_FILE)
+	$(XIPGEN_CMD) -i $(BOOTIMAGE_RPRC_NAME_TMP) -o $(BOOTIMAGE_RPRC_NAME) -x $(BOOTIMAGE_RPRC_NAME_XIP) --flash-start-addr 0x60000000 -v > $(BOOTIMAGE_TEMP_OUT_FILE)
+	$(MULTI_CORE_IMAGE_GEN) LE $(SBL_DEV_ID) $(BOOTIMAGE_NAME) $(MULTI_CORE_IMAGE_PARAMS) >> $(BOOTIMAGE_TEMP_OUT_FILE)
+	$(MULTI_CORE_IMAGE_GEN) LE $(SBL_DEV_ID) $(BOOTIMAGE_NAME_XIP) $(MULTI_CORE_IMAGE_PARAMS_XIP) >> $(BOOTIMAGE_TEMP_OUT_FILE)
+	$(RM) $(BOOTIMAGE_RPRC_NAME_TMP)
+	$(RM) $(BOOTIMAGE_TEMP_OUT_FILE)
+	@echo  Boot image: am64x:r5fss0-0:nortos:gcc-armv7 $(BOOTIMAGE_PATH)/$@ Done !!!
+	@echo  .
+
+-include $(addprefix $(OBJDIR)/, $(DEPS))

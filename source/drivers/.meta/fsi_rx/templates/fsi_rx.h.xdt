@@ -1,0 +1,18 @@
+%%{
+    let module = system.modules[args[0]];
+%%}
+/*
+ * FSI RX
+ */
+#include <drivers/fsi.h>
+
+/* FSI RX Instance Macros */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+#define `instance.$name.toUpperCase()`_BASE_ADDR (`config.baseAddr`)
+#define `instance.$name.toUpperCase()`_INTR1 (`config.intrNum1`)
+#define `instance.$name.toUpperCase()`_INTR2 (`config.intrNum2`)
+#define `instance.$name.toUpperCase()`_CLK (`config.funcClk`U)
+% }
+#define CONFIG_FSI_RX_NUM_INSTANCES (`module.$instances.length`U)

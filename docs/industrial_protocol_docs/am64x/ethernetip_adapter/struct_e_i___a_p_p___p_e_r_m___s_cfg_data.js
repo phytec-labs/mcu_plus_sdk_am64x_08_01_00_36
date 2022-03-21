@@ -1,0 +1,27 @@
+var struct_e_i___a_p_p___p_e_r_m___s_cfg_data =
+[
+    [ "tPermHdr", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_adca683d8c447cd717018c9c637375c44.html#adca683d8c447cd717018c9c637375c44", null ],
+    [ "i32uIpAddr", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a682e0a40203abc5465124db84e756400.html#a682e0a40203abc5465124db84e756400", null ],
+    [ "i32uIpNwMask", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a3cec5c90261e42191901cd7a2786a2f7.html#a3cec5c90261e42191901cd7a2786a2f7", null ],
+    [ "i32uIpGateway", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_ab98a5af832df91ee3ef40206921817fd.html#ab98a5af832df91ee3ef40206921817fd", null ],
+    [ "i32uNameServer1", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a9bcb9d824407055585a5dc5268f87800.html#a9bcb9d824407055585a5dc5268f87800", null ],
+    [ "i32uNameServer2", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a2d33d09ee7136465be07e58ef4a434f7.html#a2d33d09ee7136465be07e58ef4a434f7", null ],
+    [ "szDomainName", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a46938122bf56ab95c70931dedd2f721f.html#a46938122bf56ab95c70931dedd2f721f", null ],
+    [ "bUseDhcp", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_ae5bb74078236310f6b84af25af8bd285.html#ae5bb74078236310f6b84af25af8bd285", null ],
+    [ "szHostName", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_aff11e10dbb4a204c9f50480e038bd1ac.html#aff11e10dbb4a204c9f50480e038bd1ac", null ],
+    [ "i8uTtlValue", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_aa4ad3ad22d3b555d43863ae856a7b09e.html#aa4ad3ad22d3b555d43863ae856a7b09e", null ],
+    [ "bAcdActive", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a94753aedf63f16a13f6c1d45b8ce152b.html#a94753aedf63f16a13f6c1d45b8ce152b", null ],
+    [ "i8uAcdState", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a20bdee748f47abc909bf2a251464eb2e.html#a20bdee748f47abc909bf2a251464eb2e", null ],
+    [ "ai8uAcdAddr", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_ac62912159d16bb4dc353c938fff3b07f.html#ac62912159d16bb4dc353c938fff3b07f", null ],
+    [ "ai8uAcdHdr", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a6c21ec1faf00ddc4430122123b641d25.html#a6c21ec1faf00ddc4430122123b641d25", null ],
+    [ "i16uEncapInactTimeout", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_afe78769785e5ebe00e60c06c2adc9ad5.html#afe78769785e5ebe00e60c06c2adc9ad5", null ],
+    [ "intfConfig", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a355a07c318f46477bee9e3abc777fea0.html#a355a07c318f46477bee9e3abc777fea0", null ],
+    [ "ptpEnable", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_ac1c90ad8343b444abba8b4edd588c654.html#ac1c90ad8343b444abba8b4edd588c654", null ],
+    [ "portEnable", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a393d3633943a3540520079498abb85ea.html#a393d3633943a3540520079498abb85ea", null ],
+    [ "portLogAnnounceInterval", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a9c7fbe42a0d1956bde6b8142380423fe.html#a9c7fbe42a0d1956bde6b8142380423fe", null ],
+    [ "portLogSyncInterval", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a2595cdc9734b593f4a71f27d9afc584c.html#a2595cdc9734b593f4a71f27d9afc584c", null ],
+    [ "domainNumber", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_af3069ac2c24bc2a170377300f90cca92.html#af3069ac2c24bc2a170377300f90cca92", null ],
+    [ "tQoSParameter", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a6d61c71184f6429bb2f913998f00b4f1.html#a6d61c71184f6429bb2f913998f00b4f1", null ],
+    [ "tMcastConfig", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a691381c638a0185a814a55f11ef3c810.html#a691381c638a0185a814a55f11ef3c810", null ],
+    [ "bQuickConnectEnabled", "struct_e_i___a_p_p___p_e_r_m___s_cfg_data_a4674d16205cc338c5f577b3a63ae9ae0.html#a4674d16205cc338c5f577b3a63ae9ae0", null ]
+];

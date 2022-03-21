@@ -1,0 +1,25 @@
+var group__tisci__boardcfg__macros =
+[
+    [ "TISCI_BOARDCFG_HASH_LEN_BYTES", "group__tisci__boardcfg__macros.html#ga1e4ab56e1b1c1b01b9a2aa28f4ae7f47", null ],
+    [ "TISCI_BOARDCFG_SEC_IV_LEN", "group__tisci__boardcfg__macros.html#ga87dc791c116df6c3e0c80a106bcab442", null ],
+    [ "TISCI_BOARDCFG_SEC_RS_LEN", "group__tisci__boardcfg__macros.html#gadba8eb5b4d14c5d874f06607d24fed89", null ],
+    [ "TISCI_BOARDCFG_SEC_MAX_NUM_JTAG_UNLOCK_HOSTS", "group__tisci__boardcfg__macros.html#ga2bde67b9996bfaf52b16cd3576123489", null ],
+    [ "TISCI_BOARDCFG_SECPROXY_SCALING_FACTOR_MASK", "group__tisci__boardcfg__macros.html#gaf4b283572957da673aa4606900efb46e", null ],
+    [ "TISCI_BOARDCFG_SECPROXY_SCALING_PROFILE_MASK", "group__tisci__boardcfg__macros.html#ga883cb04fc3240964e54bf5ba708ef29f", null ],
+    [ "TISCI_BOARDCFG_SECPROXY_DISABLE_MAIN_NAV_SECURE_PROXY_MASK", "group__tisci__boardcfg__macros.html#ga1c91a9168f8557cd5cdd90f7172b7a3e", null ],
+    [ "TISCI_BOARDCFG_DEBUG_TRACE_DST_ENABLES_MASK", "group__tisci__boardcfg__macros.html#ga52ef9f28994c8410274a512fe30cf516", null ],
+    [ "TISCI_BOARDCFG_DEBUG_TRACE_SRC_ENABLES_MASK", "group__tisci__boardcfg__macros.html#ga850285fbe7618c047a27fef44b262134", null ],
+    [ "TISCI_BOARDCFG_CONTROL_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaaf5bc0ae7eaf415ccc5ed096c2c6d8a2", null ],
+    [ "TISCI_BOARDCFG_SECPROXY_MAGIC_NUM", "group__tisci__boardcfg__macros.html#ga4cbd646ad9644cbafc8f632ffc67c8a7", null ],
+    [ "TISCI_BOARDCFG_MSMC_MAGIC_NUM", "group__tisci__boardcfg__macros.html#ga249c4dc03778b0eb2339fd98f032843d", null ],
+    [ "TISCI_BOARDCFG_PROC_ACL_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaee405181e6d0ed537ffc5a6425b992cd", null ],
+    [ "TISCI_BOARDCFG_HOST_HIERARCHY_MAGIC_NUM", "group__tisci__boardcfg__macros.html#ga1846c81505e19faf847ce0a65fb38a3a", null ],
+    [ "TISCI_BOARDCFG_DBG_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaa6dd6ba1af3939263ee7385ec8b9275a", null ],
+    [ "TISCI_BOARDCFG_PMIC_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaca939ce257f829a4a182f8a7c423a911", null ],
+    [ "TISCI_BOARDCFG_OTP_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaa091746eeb7fdbbd6886c4a5a6589f15", null ],
+    [ "TISCI_BOARDCFG_DKEK_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gaec25728d9c78e1325b08e9ee20f926a9", null ],
+    [ "TISCI_BOARDCFG_SA2UL_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gacb9d5fed533bb2c93a68e835b4ab919b", null ],
+    [ "TISCI_BOARDCFG_SA2UL_CFG_MAGIC_NUM_RSVD", "group__tisci__boardcfg__macros.html#ga0331518ddd0d5145c452ccb175b1d923", null ],
+    [ "TISCI_BOARDCFG_SEC_DBG_CTRL_MAGIC_NUM", "group__tisci__boardcfg__macros.html#gac80b70503579a4efc94327aa6b3ac17a", null ],
+    [ "TISCI_BOARDCFG_SEC_HANDOVER_CFG_MAGIC_NUM", "group__tisci__boardcfg__macros.html#ga84eab73703c05b261924c0388154f94d", null ]
+];

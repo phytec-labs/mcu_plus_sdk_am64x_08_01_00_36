@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.41.xsd">
+	<!-- ProfileHeader definition as defined in ISO 15745-1. Please do not change the content. -->
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x01c4" DeviceID="0x6401">
+            <InfoText TextId="TID_DevIdent_InfoText"/>
+            <VendorName Value="Texas Instruments"/>
+        </DeviceIdentity>
+  	    <DeviceFunction>
+  	  	    <Family MainFamily="I/O" ProductFamily="TI-AM64x-PROFINET-Device"/>
+  	    </DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="DAP_1" PNIO_Version="V2.41" PhysicalSlots="0..18" ModuleIdentNumber="0x80050000" MinDeviceInterval="32" DNS_CompatibleName="TI-AM64x-PROFINET-Device" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" RequiredSchemaVersion="V2.0" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" CheckDeviceID_Allowed="false" NameOfStationNotTransferable="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" IO_SupervisorSupported="true">
+					<ModuleInfo>
+						<Name TextId="TID_DAP"/>
+						<InfoText TextId="TID_InfoTextId_DAP1"/>
+						<VendorName Value="Texas Instruments"/>
+						<OrderNumber Value="100074"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="1" TextId="TOK_Subslot_1"/>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="472" MaxOutputLength="472" MaxDataLength="1888"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_Mod_016_000" AllowedInSlots="1..2"/>
+                        <ModuleItemRef ModuleItemTarget="ID_Mod_032_000" AllowedInSlots="3..5"/>
+                        <ModuleItemRef ModuleItemTarget="ID_Mod_064_000" AllowedInSlots="6..9"/>
+                        <ModuleItemRef ModuleItemTarget="ID_Mod_000_016" AllowedInSlots="10..11"/>
+                        <ModuleItemRef ModuleItemTarget="ID_Mod_000_032" AllowedInSlots="12..14"/>
+                        <ModuleItemRef ModuleItemTarget="ID_Mod_000_064" AllowedInSlots="15..18"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_2" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="TOK_RT_board"/>
+								<InfoText TextId="TOK_RT_board"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_1I" SubmoduleIdentNumber="0x000A" SubslotNumber="32768" TextId="TOK_DAP_InterfaceModule" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true" DCP_HelloSupported="false" DelayMeasurementSupported="false">
+							<ApplicationRelations StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" NumberOfAR="2">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_1P1" SubmoduleIdentNumber="0x000B" SubslotNumber="32769" TextId="TOK_Port1">
+							<MAUTypeList>
+								<MAUTypeItem Value="16"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_1P2" SubmoduleIdentNumber="0x000C" SubslotNumber="32770" TextId="TOK_Port2">
+							<MAUTypeList>
+								<MAUTypeItem Value="16"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+						</SystemDefinedSubmoduleList>
+                        <Graphics>
+                          <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_V1"/>
+                          <GraphicItemRef Type="DeviceIcon" GraphicItemTarget="ID_Icon_V1"/>
+                        </Graphics>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+			<ModuleList>
+				<ModuleItem ID="ID_Mod_016_000" ModuleIdentNumber="0x00000005">
+					<ModuleInfo CategoryRef="ID_CAT_In">
+                        <Name TextId="TID_ModName_IO_016_000"/>
+                        <InfoText TextId="TID_ModInfo_IO_016_000"/>
+                    </ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_016_000"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_Sub_016_000_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Input Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="16" TextId="TID_INPUT_016"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TID_SubName_IO_016_000"/>
+                                <InfoText TextId="TID_SubInfo_IO_016_000"/>
+                            </ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="ID_Mod_032_000" ModuleIdentNumber="0x00000006">
+					<ModuleInfo CategoryRef="ID_CAT_In">
+						<Name TextId="TID_ModName_IO_032_000"/>
+						<InfoText TextId="TID_ModInfo_IO_032_000"/>
+					</ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_032_000"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+      					<VirtualSubmoduleItem ID="ID_Sub_032_000_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Input Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="32" TextId="TID_INPUT_032"/>
+                                </Input>
+                            </IOData>
+							<ModuleInfo>
+								<Name TextId="TID_SubName_IO_032_000"/>
+                                <InfoText TextId="TID_SubInfo_IO_032_000"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="ID_Mod_064_000" ModuleIdentNumber="0x00000007">
+					<ModuleInfo CategoryRef="ID_CAT_In">
+						<Name TextId="TID_ModName_IO_064_000"/>
+						<InfoText TextId="TID_ModInfo_IO_064_000"/>
+					</ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_064_000"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+      					<VirtualSubmoduleItem ID="ID_Sub_064_000_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Input Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="64" TextId="TID_INPUT_064"/>
+                                </Input>
+                            </IOData>
+							<ModuleInfo>
+								<Name TextId="TID_SubName_IO_064_000"/>
+                                <InfoText TextId="TID_SubInfo_IO_064_000"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="ID_Mod_000_016" ModuleIdentNumber="0x00000050">
+					<ModuleInfo CategoryRef="ID_CAT_Out">
+						<Name TextId="TID_ModName_IO_000_016"/>
+						<InfoText TextId="TID_ModInfo_IO_000_016"/>
+					</ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_000_016"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+      					<VirtualSubmoduleItem ID="ID_Sub_000_016_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Output Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="16" TextId="TID_OUTPUT_016"/>
+                                </Output>
+                            </IOData>
+							<ModuleInfo>
+								<Name TextId="TID_SubName_IO_000_016"/>
+                                <InfoText TextId="TID_SubInfo_IO_000_016"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="ID_Mod_000_032" ModuleIdentNumber="0x00000060">
+					<ModuleInfo CategoryRef="ID_CAT_Out">
+						<Name TextId="TID_ModName_IO_000_032"/>
+						<InfoText TextId="TID_ModInfo_IO_000_032"/>
+					</ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_000_032"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+      					<VirtualSubmoduleItem ID="ID_Sub_000_032_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Output Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="32" TextId="TID_OUTPUT_032"/>
+                                </Output>
+                            </IOData>
+							<ModuleInfo>
+								<Name TextId="TID_SubName_IO_000_032"/>
+                                <InfoText TextId="TID_SubInfo_IO_000_032"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="ID_Mod_000_064" ModuleIdentNumber="0x00000070">
+					<ModuleInfo CategoryRef="ID_CAT_Out">
+						<Name TextId="TID_ModName_IO_000_064"/>
+						<InfoText TextId="TID_ModInfo_IO_000_064"/>
+					</ModuleInfo>
+					<SubslotList>
+                        <SubslotItem SubslotNumber="1" TextId="TID_Subslot_IO_000_064"/>
+                    </SubslotList>
+					<VirtualSubmoduleList>
+      					<VirtualSubmoduleItem ID="ID_Sub_000_064_0" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+                                <Output Consistency="Item consistency">
+                                    <DataItem DataType="OctetString" Length="64" TextId="TID_OUTPUT_064"/>
+                                </Output>
+                            </IOData>
+							<ModuleInfo>
+								<Name TextId="TID_SubName_IO_000_064"/>
+                                <InfoText TextId="TID_SubInfo_IO_000_064"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+			<ChannelDiagList> 
+      		<ChannelDiagItem ErrorType="256"> 
+      		   <Name TextId="TID_ChanErr_Name_256"/>
+      		</ChannelDiagItem> 
+      	    </ChannelDiagList> 
+            <GraphicsList>
+                <GraphicItem ID="ID_Graph_V1" GraphicFile=""/>
+                <GraphicItem ID="ID_Icon_V1" GraphicFile=""/>
+            </GraphicsList>
+            <CategoryList>
+                <CategoryItem ID="ID_RT" TextId="RT"/>
+                <CategoryItem ID="ID_CAT_In" TextId="TID_Cat_In"/>
+                <CategoryItem ID="ID_CAT_Out" TextId="TID_Cat_Out"/>
+                <CategoryItem ID="ID_CAT_InOut" TextId="TID_Cat_InOut"/>
+                <CategoryItem ID="ID_CAT_Other" TextId="TID_Cat_Other"/>
+            </CategoryList>
+			<ExternalTextList>
+				<PrimaryLanguage>
+                    <Text TextId="TID_DAP" Value="TI-ProfiNet"/>
+                    <Text TextId="RT" Value="RT"/>
+                    <Text TextId="TOK_RT_board" Value="TI Profinet"/>
+                    <Text TextId="TOK_Subslot_1" Value="Record Access"/>
+                    <Text TextId="TOK_Subslot_8000" Value="X1"/>
+                    <Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+                    <Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+                    <Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO"/>
+                    <Text TextId="TOK_Port1" Value="Port 1 - RJ45"/>
+                    <Text TextId="TOK_Port2" Value="Port 2 - RJ45"/>
+                    <Text TextId="TID_Cat_In" Value="Input Modules"/>
+                    <Text TextId="TID_Cat_Out" Value="Output Modules"/>
+                    <Text TextId="TID_Cat_InOut" Value="In-/Output Modules"/>
+                    <Text TextId="TID_Cat_Other" Value="Other Modules"/>
+                    <!--DAPs-->
+                    <Text TextId="TID_DevIdent_InfoText" Value="TI Profinet Interfacemodul"/>
+                    <Text TextId="TID_InfoTextId_DAP1" Value="TI Profinet Interfacemodul"/>
+                    <!--module name-->
+                    <Text TextId="TID_ModName_IO_016_000" Value="Input 16 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_016_000" Value="Inputmodule, 16 Byte"/>
+                    <Text TextId="TID_SubName_IO_016_000" Value="Input 16 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_016_000" Value="Inputmodule 16 Byte"/>
+                    <Text TextId="TID_Subslot_IO_016_000" Value="Subslot 1, Input 16 Byte"/>
+                    <Text TextId="TID_ModName_IO_032_000" Value="Input 32 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_032_000" Value="Inputmodule, 32 Byte"/>
+                    <Text TextId="TID_SubName_IO_032_000" Value="Input 32 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_032_000" Value="Inputmodule 32 Byte"/>
+                    <Text TextId="TID_Subslot_IO_032_000" Value="Subslot 1, Input 32 Byte"/>
+                    <Text TextId="TID_ModName_IO_064_000" Value="Input 64 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_064_000" Value="Inputmodule, 64 Byte"/>
+                    <Text TextId="TID_SubName_IO_064_000" Value="Input 64 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_064_000" Value="Inputmodule 64 Byte"/>
+                    <Text TextId="TID_Subslot_IO_064_000" Value="Subslot 1, Input 64 Byte"/>
+                    <Text TextId="TID_ModName_IO_000_016" Value="Output 16 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_000_016" Value="Outputmodule, 16 Byte"/>
+                    <Text TextId="TID_SubName_IO_000_016" Value="Output 16 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_000_016" Value="Outputmodule 16 Byte"/>
+                    <Text TextId="TID_Subslot_IO_000_016" Value="Subslot 1, Output 16 Byte"/>
+                    <Text TextId="TID_ModName_IO_000_032" Value="Output 32 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_000_032" Value="Outputmodule, 32 Byte"/>
+                    <Text TextId="TID_SubName_IO_000_032" Value="Output 32 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_000_032" Value="Outputmodule 32 Byte"/>
+                    <Text TextId="TID_Subslot_IO_000_032" Value="Subslot 1, Output 32 Byte"/>
+                    <Text TextId="TID_ModName_IO_000_064" Value="Output 64 Byte"/>
+                    <Text TextId="TID_ModInfo_IO_000_064" Value="Outputmodule, 64 Byte"/>
+                    <Text TextId="TID_SubName_IO_000_064" Value="Output 64 Byte"/>
+                    <Text TextId="TID_SubInfo_IO_000_064" Value="Outputmodule 64 Byte"/>
+                    <Text TextId="TID_Subslot_IO_000_064" Value="Subslot 1, Output 64 Byte"/>
+                    <!--dataitem name-->
+                    <Text TextId="TID_INPUT_016" Value="16 byte input"/>
+                    <Text TextId="TID_INPUT_032" Value="32 byte input"/>
+                    <Text TextId="TID_INPUT_064" Value="64 byte input"/>
+                    <Text TextId="TID_OUTPUT_016" Value="16 byte output"/>
+                    <Text TextId="TID_OUTPUT_032" Value="32 byte output"/>
+                    <Text TextId="TID_OUTPUT_064" Value="64 byte output"/>
+           		    <!--- Text IDs for Channel Errors (Profibus Diagnosis Bits) -->
+           		    <Text TextId="TID_ChanErr_Name_256" Value="Invaild process data"/>
+                </PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

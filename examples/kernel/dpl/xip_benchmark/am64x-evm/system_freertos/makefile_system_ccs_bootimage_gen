@@ -1,0 +1,73 @@
+#
+# Auto generated makefile - DO NOT MODIFY
+#
+
+# Below variables need to be defined outside this file or via command line
+# - MCU_PLUS_SDK_PATH
+# - PROFILE
+# - OUTNAME
+# - CCS_INSTALL_DIR
+
+CCS_PATH=$(CCS_INSTALL_DIR)
+include $(MCU_PLUS_SDK_PATH)/imports.mak
+
+MULTI_CORE_BOOTIMAGE_PATH=$(abspath $(PROFILE))
+MULTI_CORE_BOOTIMAGE_NAME:=$(PROFILE)/$(OUTNAME).appimage
+MULTI_CORE_BOOTIMAGE_NAME_SIGNED:=$(PROFILE)/$(OUTNAME).appimage.signed
+MULTI_CORE_BOOTIMAGE_NAME_XIP:=$(PROFILE)/$(OUTNAME).appimage_xip
+
+#
+# Generation of multi-core boot image which can be loaded by Secondary Boot Loader (SBL)
+#
+ifeq ($(OS),Windows_NT)
+EXE_EXT=.exe
+endif
+ifeq ($(OS),Windows_NT)
+  BOOTIMAGE_CERT_GEN_CMD=powershell -executionpolicy unrestricted -command $(MCU_PLUS_SDK_PATH)/tools/boot/signing/x509CertificateGen.ps1
+else
+  BOOTIMAGE_CERT_GEN_CMD=$(MCU_PLUS_SDK_PATH)/tools/boot/signing/x509CertificateGen.sh
+endif
+BOOTIMAGE_TEMP_OUT_FILE=$(PROFILE)/temp_stdout_$(PROFILE).txt
+
+BOOTIMAGE_CORE_ID_a53ss0-0 = 0
+BOOTIMAGE_CORE_ID_r5fss0-0 = 4
+BOOTIMAGE_CORE_ID_r5fss0-1 = 5
+BOOTIMAGE_CORE_ID_r5fss1-0 = 6
+BOOTIMAGE_CORE_ID_r5fss1-1 = 7
+BOOTIMAGE_CORE_ID_m4fss0-0 = 14
+SBL_RUN_ADDRESS=0x70000000
+SBL_DEV_ID=55
+
+MULTI_CORE_IMAGE_GEN=$(MCU_PLUS_SDK_PATH)/tools/boot/multicoreImageGen/MulticoreImageGen$(EXE_EXT)
+OUTRPRC_PATH=$(MCU_PLUS_SDK_PATH)/tools/boot/out2rprc/out2rprc.exe
+ifeq ($(OS),Windows_NT)
+  OUTRPRC_CMD=$(OUTRPRC_PATH)
+else
+  OUTRPRC_CMD=mono $(OUTRPRC_PATH)
+endif
+
+MULTI_CORE_APP_PARAMS = \
+    $(BOOTIMAGE_CORE_ID_r5fss0-0) ../xip_benchmark_am64x-evm_r5fss0-0_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc \
+    $(BOOTIMAGE_CORE_ID_r5fss0-1) ../xip_benchmark_am64x-evm_r5fss0-1_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss0-1_freertos_ti-arm-clang.rprc \
+    $(BOOTIMAGE_CORE_ID_r5fss1-0) ../xip_benchmark_am64x-evm_r5fss1-0_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss1-0_freertos_ti-arm-clang.rprc \
+    $(BOOTIMAGE_CORE_ID_r5fss1-1) ../xip_benchmark_am64x-evm_r5fss1-1_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss1-1_freertos_ti-arm-clang.rprc \
+
+MULTI_CORE_APP_PARAMS_XIP = \
+    $(BOOTIMAGE_CORE_ID_r5fss0-0) ../xip_benchmark_am64x-evm_r5fss0-0_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc_xip \
+    $(BOOTIMAGE_CORE_ID_r5fss0-1) ../xip_benchmark_am64x-evm_r5fss0-1_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss0-1_freertos_ti-arm-clang.rprc_xip \
+    $(BOOTIMAGE_CORE_ID_r5fss1-0) ../xip_benchmark_am64x-evm_r5fss1-0_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss1-0_freertos_ti-arm-clang.rprc_xip \
+    $(BOOTIMAGE_CORE_ID_r5fss1-1) ../xip_benchmark_am64x-evm_r5fss1-1_freertos_ti-arm-clang/$(PROFILE)/xip_benchmark_am64x-evm_r5fss1-1_freertos_ti-arm-clang.rprc_xip \
+
+all:
+ifeq ($(CCS_IDE_MODE),cloud)
+#	No post build steps
+else
+	@echo  Boot multi-core image: $(MULTI_CORE_BOOTIMAGE_NAME) ...
+ifneq ($(OS),Windows_NT)
+	$(CHMOD) a+x $(MULTI_CORE_IMAGE_GEN)
+endif
+	$(MULTI_CORE_IMAGE_GEN) LE $(SBL_DEV_ID) $(MULTI_CORE_BOOTIMAGE_NAME) $(MULTI_CORE_APP_PARAMS) >> $(BOOTIMAGE_TEMP_OUT_FILE)
+	$(MULTI_CORE_IMAGE_GEN) LE $(SBL_DEV_ID) $(MULTI_CORE_BOOTIMAGE_NAME_XIP) $(MULTI_CORE_APP_PARAMS_XIP) >> $(BOOTIMAGE_TEMP_OUT_FILE)
+	@echo  Boot multi-core image: $(MULTI_CORE_BOOTIMAGE_NAME) Done !!!
+	@echo  .
+endif
