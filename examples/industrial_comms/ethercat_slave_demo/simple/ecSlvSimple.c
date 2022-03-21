@@ -2533,7 +2533,7 @@ static void EC_SLV_APP_escStatusAnalysis(EC_SLV_APP_Sapplication_t* pAppInstance
 static void EC_SLV_APP_applicationRun(void* pAppCtxt_p)
 {
     EC_SLV_APP_Sapplication_t*  pApplicationInstace = (EC_SLV_APP_Sapplication_t*)pAppCtxt_p;
-    static uint8_t              lastLed             = 0U;
+    static uint8_t              lastLed             = 64U;
     static
     EC_API_SLV_EEsmState_t      lastState           = EC_API_SLV_eESM_uninit;   /* last known stack state to notify changes */
     EC_API_SLV_EEsmState_t      curState            = EC_API_SLV_eESM_uninit;   /* current stack state */
@@ -2665,7 +2665,7 @@ static void EC_SLV_APP_applicationRun(void* pAppCtxt_p)
 
             pApplicationInstace->prev = now;
 
-            lastLed = lastLed ? lastLed << 1: 1;
+            lastLed = (lastLed != 64U) ? lastLed << 2 : 1;
 
             //Write Led data to the process data. It can be seen in OBD in Object 0x2002:2 as well.
             EC_API_SLV_PDO_setEntryData(pApplicationInstace->ptEcSlvApi, pApplicationInstace->ptTxPdo1A00, 1, sizeof(uint8_t), (uint8_t*)&lastLed);

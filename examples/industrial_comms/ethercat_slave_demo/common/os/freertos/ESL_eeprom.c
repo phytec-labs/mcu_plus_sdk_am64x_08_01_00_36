@@ -48,8 +48,8 @@
 #include <drivers/i2c.h>
 #include <board/eeprom.h>
 
-//#include <board/flash.h>
-//#include <string.h>
+#include <board/flash.h>
+#include <string.h>
 
 #include "ti_board_open_close.h"
 
@@ -61,7 +61,7 @@ typedef struct SPI_SEepromHeader
 } SPI_SEepromHeader_t;
 
 #if !(defined FBTLPROVIDER) || (FBTLPROVIDER==0)
-//Flash_Attrs gFlashAttr_MT35XU512ABA;
+Flash_Attrs gFlashAttr_MT35XU512ABA;
 static Flash_Attrs*     flashAttribute_s    = NULL;
 #endif
 
@@ -98,23 +98,23 @@ void EC_SLV_APP_EEP_initFlash(void* pContext_p)
     OSALUNREF_PARM(pContext_p);
 
 #if !(defined FBTLPROVIDER) || (FBTLPROVIDER==0)
-    flashAttribute_s = Flash_getAttrs(CONFIG_FLASH0);
-//    gFlashAttr_MT35XU512ABA.deviceId = 0x5B1A;
-//    gFlashAttr_MT35XU512ABA.manufacturerId = 0x2c;
-//    gFlashAttr_MT35XU512ABA.driverInstance = 0;
-//    gFlashAttr_MT35XU512ABA.flashSize = 67108864;
-//    gFlashAttr_MT35XU512ABA.blockCount = 512;
-//    gFlashAttr_MT35XU512ABA.blockSize = 131072;
-//    gFlashAttr_MT35XU512ABA.pageCount = 512;
-//    gFlashAttr_MT35XU512ABA.pageSize = 256;
-//    gFlashAttr_MT35XU512ABA.sectorCount = 16384;
-//    gFlashAttr_MT35XU512ABA.sectorSize = 4096;
-//    flashAttribute_s = &gFlashAttr_MT35XU512ABA;
+    //flashAttribute_s = Flash_getAttrs(CONFIG_FLASH0);
+    gFlashAttr_MT35XU512ABA.deviceId = 0x5B1A;
+    gFlashAttr_MT35XU512ABA.manufacturerId = 0x2c;
+    gFlashAttr_MT35XU512ABA.driverInstance = 0;
+    gFlashAttr_MT35XU512ABA.flashSize = 67108864;
+    gFlashAttr_MT35XU512ABA.blockCount = 512;
+    gFlashAttr_MT35XU512ABA.blockSize = 131072;
+    gFlashAttr_MT35XU512ABA.pageCount = 512;
+    gFlashAttr_MT35XU512ABA.pageSize = 256;
+    gFlashAttr_MT35XU512ABA.sectorCount = 16384;
+    gFlashAttr_MT35XU512ABA.sectorSize = 4096;
+    flashAttribute_s = &gFlashAttr_MT35XU512ABA;
 
 #endif
-//    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
-//    /* Initialize the flash device in 1s1s1s mode */
-//    OSPI_norFlashInit1s1s1s(ospiHandle);
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
+    /* Initialize the flash device in 1s1s1s mode */
+    OSPI_norFlashInit1s1s1s(ospiHandle);
 }
 
 /*! <!-- Description: -->
@@ -159,9 +159,9 @@ void EC_SLV_APP_EEP_writeEeprom(void *pContext_p, void* pEeprom_p, uint32_t leng
     uint32_t                flashMagic  = (uint32_t)pContext_p;
     SPI_SEepromHeader_t*    pageHead    = NULL;
 
-    uint32_t                blk,page;
+//    uint32_t                blk,page;
 
-    //OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
 
 #if !(defined FBTLPROVIDER) || (FBTLPROVIDER==0)
     if (NULL == flashAttribute_s)
@@ -182,14 +182,14 @@ void EC_SLV_APP_EEP_writeEeprom(void *pContext_p, void* pEeprom_p, uint32_t leng
 #if !(defined FBTLPROVIDER) || (FBTLPROVIDER==0)
     for (idx = 0; idx < pageCount; ++idx)
     {
-        Flash_offsetToBlkPage(gFlashHandle[CONFIG_FLASH0], offset+(idx*flashAttribute_s->blockSize), &blk, &page);
-        Flash_eraseBlk(gFlashHandle[CONFIG_FLASH0], blk);
+//        Flash_offsetToBlkPage(gFlashHandle[CONFIG_FLASH0], offset+(idx*flashAttribute_s->blockSize), &blk, &page);
+//        Flash_eraseBlk(gFlashHandle[CONFIG_FLASH0], blk);
 
-        //OSPI_norFlashErase(ospiHandle, offset+(idx*flashAttribute_s->blockSize));
+        OSPI_norFlashErase(ospiHandle, offset+(idx*flashAttribute_s->blockSize));
 
     }
-    Flash_write(gFlashHandle[CONFIG_FLASH0], offset, (uint8_t*)pageHead, sizeof(SPI_SEepromHeader_t)+length_p);
-    //OSPI_norFlashWrite(ospiHandle, offset, (uint8_t*)pageHead, sizeof(SPI_SEepromHeader_t)+length_p);
+    //Flash_write(gFlashHandle[CONFIG_FLASH0], offset, (uint8_t*)pageHead, sizeof(SPI_SEepromHeader_t)+length_p);
+    OSPI_norFlashWrite(ospiHandle, offset, (uint8_t*)pageHead, sizeof(SPI_SEepromHeader_t)+length_p);
 #endif
     OSAL_MEMORY_free(pageHead);
 }
@@ -238,9 +238,9 @@ bool EC_SLV_APP_EEP_loadEeprom(void* pContext_p, void* pEeprom_p, uint32_t* pLen
 #if !(defined FBTLPROVIDER) || (FBTLPROVIDER==0)
     uint32_t                flashMagic  = (uint32_t)pContext_p;
 
-    status = Flash_read(gFlashHandle[CONFIG_FLASH0], offset, (uint8_t*)&pageProto, sizeof(SPI_SEepromHeader_t));
-    //OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
-    //status = OSPI_norFlashRead(ospiHandle, offset, (uint8_t*)&pageProto, sizeof(SPI_SEepromHeader_t));
+    //status = Flash_read(gFlashHandle[CONFIG_FLASH0], offset, (uint8_t*)&pageProto, sizeof(SPI_SEepromHeader_t));
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);
+    status = OSPI_norFlashRead(ospiHandle, offset, (uint8_t*)&pageProto, sizeof(SPI_SEepromHeader_t));
 
 
     if (SystemP_SUCCESS !=status)
@@ -253,8 +253,8 @@ bool EC_SLV_APP_EEP_loadEeprom(void* pContext_p, void* pEeprom_p, uint32_t* pLen
         goto Exit;
     }
 
-    status = Flash_read(gFlashHandle[CONFIG_FLASH0], offset+sizeof(SPI_SEepromHeader_t), pEeprom_p, pageProto.dataSize);
-    //status = OSPI_norFlashRead(ospiHandle, offset+sizeof(SPI_SEepromHeader_t), pEeprom_p, pageProto.dataSize);
+    //status = Flash_read(gFlashHandle[CONFIG_FLASH0], offset+sizeof(SPI_SEepromHeader_t), pEeprom_p, pageProto.dataSize);
+    status = OSPI_norFlashRead(ospiHandle, offset+sizeof(SPI_SEepromHeader_t), pEeprom_p, pageProto.dataSize);
 
     if (SystemP_SUCCESS !=status)
     {

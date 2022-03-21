@@ -45,16 +45,16 @@
 #include <ESL_BOARD_OS_config.h>
 
 //phyCORE-AM64x
-//#define TIESC_PHYADDR_0                     1
-//#define TIESC_PHYADDR_1                     2
-//#define TIESC_PHYADDR_2                     1
-//#define TIESC_PHYADDR_3                     2
+#define TIESC_PHYADDR_0                     1
+#define TIESC_PHYADDR_1                     2
+#define TIESC_PHYADDR_2                     1
+#define TIESC_PHYADDR_3                     2
 
 //GPEVM
-#define TIESC_PHYADDR_0                     3
-#define TIESC_PHYADDR_1                     15
-#define TIESC_PHYADDR_2                     3
-#define TIESC_PHYADDR_3                     15
+//#define TIESC_PHYADDR_0                     3
+//#define TIESC_PHYADDR_1                     15
+//#define TIESC_PHYADDR_2                     3
+//#define TIESC_PHYADDR_3                     15
 
 #define TIESC_LINK0_POLINVERT               true
 #define TIESC_LINK1_POLINVERT               true
