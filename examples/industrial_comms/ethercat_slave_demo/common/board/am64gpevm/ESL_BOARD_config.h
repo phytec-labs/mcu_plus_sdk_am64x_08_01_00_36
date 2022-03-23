@@ -78,10 +78,10 @@
  #define ECAT_REVISION_NO                   0x00010000
 
 //GPEVM and PRU Expansion Board uses this instance
-#define ESL_DEFAULT_PRUICSS                 EC_API_SLV_ePRUICSS_INSTANCE_TWO
+//#define ESL_DEFAULT_PRUICSS                 EC_API_SLV_ePRUICSS_INSTANCE_TWO
 
 //Pinger and Dev kit use this instance by default
-//#define ESL_DEFAULT_PRUICSS                 EC_API_SLV_ePRUICSS_INSTANCE_ONE
+#define ESL_DEFAULT_PRUICSS                 EC_API_SLV_ePRUICSS_INSTANCE_ONE
 
 #if (defined __cplusplus)
 extern "C" {

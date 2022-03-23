@@ -74,17 +74,17 @@ StackType_t EC_SLV_APP_appRunWrapTaskStack_g[APPRWRAP_TASK_SIZE] __attribute__((
  */
 
 //Pinger carrier board
-//static Pinmux_PerCfg_t My_gPinMuxMainDomainCfg[] = {
-//    {
-//        PIN_EXT_REFCLK1, ( PIN_MODE(5) | PIN_PULL_DISABLE )
-//    },
-//    {PINMUX_END, PINMUX_END}
-//};
-//
-//void EthRefCLK_init(void)
-//{
-//    Pinmux_config(My_gPinMuxMainDomainCfg, PINMUX_DOMAIN_ID_MAIN);
-//}
+static Pinmux_PerCfg_t My_gPinMuxMainDomainCfg[] = {
+    {
+        PIN_EXT_REFCLK1, ( PIN_MODE(5) | PIN_PULL_DISABLE )
+    },
+    {PINMUX_END, PINMUX_END}
+};
+
+void EthRefCLK_init(void)
+{
+    Pinmux_config(My_gPinMuxMainDomainCfg, PINMUX_DOMAIN_ID_MAIN);
+}
 
 /*!
  *  <!-- Description: -->
@@ -110,7 +110,7 @@ StackType_t EC_SLV_APP_appRunWrapTaskStack_g[APPRWRAP_TASK_SIZE] __attribute__((
 void ESL_OS_init(void)
 {
     System_init();
-    //EthRefCLK_init();
+    EthRefCLK_init();
     return;
 }
 

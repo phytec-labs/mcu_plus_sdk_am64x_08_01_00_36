@@ -42,10 +42,6 @@
 #define SHOW_LOOPCOUNT  0
 #define SHOW_ESCSTATUS  0
 
-//PHYTEC - No I2C LEDs on Pinger
-//#define ENABLE_I2CLEDS  0
-
-//GPEVM
 #define ENABLE_I2CLEDS  1
 
 #define BIT2BYTE(x)                     (((x)+7) >> 3)

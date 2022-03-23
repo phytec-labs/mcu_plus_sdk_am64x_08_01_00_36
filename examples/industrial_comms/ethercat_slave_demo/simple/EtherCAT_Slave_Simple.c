@@ -365,9 +365,9 @@ static void EnetMp_ReleasePhyResets(void) {
 }*/
 
 // PHYTEC - Map some special address we need to enable the ethernet clock below for the phyCORE-AM64x and Pinger carrier board
-//#define CTRLMMR_LOCK2_KICK0 (uint32_t*)0x43009008
-//#define CTRLMMR_LOCK2_KICK1 (uint32_t*)0x4300900c
-//#define CTRLMMR_CLKOUT_CTRL (uint32_t*)0x43008010
+#define CTRLMMR_LOCK2_KICK0 (uint32_t*)0x43009008
+#define CTRLMMR_LOCK2_KICK1 (uint32_t*)0x4300900c
+#define CTRLMMR_CLKOUT_CTRL (uint32_t*)0x43008010
 
 
 /*!
@@ -399,9 +399,9 @@ int main(int argc, char *argv[])
     // PHYTEC - Pinger Carrier board
     /* Set clkout0 to 25MHz and enable */
     /* 25MHz clock is needed for PRU-ICSS-G0 ETH PHYs */
-    //*CTRLMMR_LOCK2_KICK0 = 0x68ef3490;  /* kick0 */
-    //*CTRLMMR_LOCK2_KICK1 = 0xd172bc5a;  /* kick1 */
-    //*CTRLMMR_CLKOUT_CTRL = 0x11;    /* CLK_EN = 1, CLK_SEL = 1 */
+    *CTRLMMR_LOCK2_KICK0 = 0x68ef3490;  /* kick0 */
+    *CTRLMMR_LOCK2_KICK1 = 0xd172bc5a;  /* kick1 */
+    *CTRLMMR_CLKOUT_CTRL = 0x11;    /* CLK_EN = 1, CLK_SEL = 1 */
 
     ESL_OS_init();
 

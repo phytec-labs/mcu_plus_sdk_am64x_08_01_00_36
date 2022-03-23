@@ -21,9 +21,9 @@ const gpio1      = gpio.addInstance();
 const gpio2      = gpio.addInstance();
 const gpio3      = gpio.addInstance();
 const gpio4      = gpio.addInstance();
-const gpio5      = gpio.addInstance();
 const i2c        = scripting.addModule("/drivers/i2c/i2c", {}, false);
 const i2c1       = i2c.addInstance();
+const i2c2       = i2c.addInstance();
 const ipc        = scripting.addModule("/drivers/ipc/ipc");
 const ospi       = scripting.addModule("/drivers/ospi/ospi", {}, false);
 const ospi1      = ospi.addInstance();
@@ -56,6 +56,7 @@ led3.$name = "CONFIG_PHY0_RESET";
 led4.$name = "CONFIG_PHY1_RESET";
 
 led5.$name = "CONFIG_LED0";
+led5.name  = "PCA9533D";
 
 led1.peripheralDriver          = gpio1;
 gpio1.$name                    = "CONFIG_GPIO0";
@@ -78,14 +79,12 @@ led4.peripheralDriver      = gpio4;
 gpio4.GPIO.gpioPin.rx      = false;
 gpio4.GPIO.gpioPin.$assign = "ball.W1";
 
-gpio5.$name                = "CONFIG_GPIO4";
-led5.peripheralDriver      = gpio5;
-gpio5.GPIO.gpioPin.rx      = false;
-gpio5.GPIO.gpioPin.$assign = "ball.T20";
-
 eeprom1.peripheralDriver = i2c1;
 i2c1.$name               = "CONFIG_I2C0";
 i2c1.I2C.$assign         = "I2C0";
+
+i2c2.$name            = "CONFIG_I2C1";
+led5.peripheralDriver = i2c2;
 
 ipc.r5fss0_1 = "NONE";
 ipc.r5fss1_0 = "notify";
@@ -97,11 +96,21 @@ ospi1.inputClkFreq = 200000000;
 
 uart1.$name = "CONFIG_UART_CONSOLE";
 
-ethercat1.$name              = "CONFIG_ETHERCAT0";
-ethercat1.ethphy[0].$name    = "CONFIG_ETHPHY0";
-ethercat1.ethphy[0].mdioPort = 1;
-ethercat1.ethphy[1].$name    = "CONFIG_ETHPHY1";
-ethercat1.ethphy[1].mdioPort = 2;
+ethercat1.$name                                 = "CONFIG_ETHERCAT0";
+ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN0.rx       = false;
+ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN0.$used    = false;
+ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN1.rx       = false;
+ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN1.$used    = false;
+ethercat1.PRU_ICSSG0_IEP.EDC_SYNC_OUT0.$used    = false;
+ethercat1.PRU_ICSSG0_IEP.EDC_SYNC_OUT1.$used    = false;
+ethercat1.PRU_ICSSG0_MII_G_RT.MII0_RXER.pu_pd   = "pd";
+ethercat1.PRU_ICSSG0_MII_G_RT.MII0_RXLINK.pu_pd = "pd";
+ethercat1.PRU_ICSSG0_MII_G_RT.MII1_RXER.pu_pd   = "pd";
+ethercat1.PRU_ICSSG0_MII_G_RT.MII1_RXLINK.pu_pd = "pd";
+ethercat1.ethphy[0].$name                       = "CONFIG_ETHPHY0";
+ethercat1.ethphy[0].mdioPort                    = 1;
+ethercat1.ethphy[1].$name                       = "CONFIG_ETHPHY1";
+ethercat1.ethphy[1].mdioPort                    = 2;
 
 const pruicss  = scripting.addModule("/drivers/pruicss/pruicss", {}, false);
 const pruicss1 = pruicss.addInstance({}, false);
@@ -149,9 +158,11 @@ gpio1.MCU_GPIO.$suggestSolution                            = "MCU_GPIO0";
 gpio2.GPIO.$suggestSolution                                = "GPIO0";
 gpio3.GPIO.$suggestSolution                                = "GPIO1";
 gpio4.GPIO.$suggestSolution                                = "GPIO1";
-gpio5.GPIO.$suggestSolution                                = "GPIO0";
 i2c1.I2C.SCL.$suggestSolution                              = "ball.A18";
 i2c1.I2C.SDA.$suggestSolution                              = "ball.B18";
+i2c2.I2C.$suggestSolution                                  = "I2C1";
+i2c2.I2C.SCL.$suggestSolution                              = "ball.C18";
+i2c2.I2C.SDA.$suggestSolution                              = "ball.B19";
 ospi1.OSPI.$suggestSolution                                = "OSPI0";
 ospi1.OSPI.CLK.$suggestSolution                            = "ball.N20";
 ospi1.OSPI.CSn0.$suggestSolution                           = "ball.L19";
@@ -170,11 +181,7 @@ uart1.UART.TXD.$suggestSolution                            = "ball.C16";
 ethercat1.PRU_ICSSG0_MDIO.$suggestSolution                 = "PRU_ICSSG0_MDIO0";
 ethercat1.PRU_ICSSG0_MDIO.MDC.$suggestSolution             = "ball.P3";
 ethercat1.PRU_ICSSG0_MDIO.MDIO.$suggestSolution            = "ball.P2";
-ethercat1.PRU_ICSSG0_IEP.$suggestSolution                  = "PRU_ICSSG0_IEP1";
-ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN0.$suggestSolution    = "ball.P5";
-ethercat1.PRU_ICSSG0_IEP.EDC_LATCH_IN1.$suggestSolution    = "ball.W5";
-ethercat1.PRU_ICSSG0_IEP.EDC_SYNC_OUT0.$suggestSolution    = "ball.R2";
-ethercat1.PRU_ICSSG0_IEP.EDC_SYNC_OUT1.$suggestSolution    = "ball.V5";
+ethercat1.PRU_ICSSG0_IEP.$suggestSolution                  = "PRU_ICSSG0_IEP0";
 ethercat1.PRU_ICSSG0_MII_G_RT.$suggestSolution             = "PRU_ICSSG0_MII_G_RT";
 ethercat1.PRU_ICSSG0_MII_G_RT.MII0_RXD0.$suggestSolution   = "ball.Y1";
 ethercat1.PRU_ICSSG0_MII_G_RT.MII0_RXD1.$suggestSolution   = "ball.R4";
