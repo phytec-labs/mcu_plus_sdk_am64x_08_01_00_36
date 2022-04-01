@@ -56,7 +56,7 @@ led3.$name = "CONFIG_PHY0_RESET";
 led4.$name = "CONFIG_PHY1_RESET";
 
 led5.$name = "CONFIG_LED0";
-led5.name  = "PCA9533D";
+led5.name  = "PCA9535DWR";
 
 led1.peripheralDriver          = gpio1;
 gpio1.$name                    = "CONFIG_GPIO0";
