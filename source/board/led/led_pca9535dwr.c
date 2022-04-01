@@ -119,12 +119,25 @@ int32_t LED_pca9535dwrOpen(LED_Config *config, const LED_Params *params)
         wrData[1U] = (uint8_t) 0U;
         wrData[2U] = PCA9535DWR_CMD_CONFIG_PORT_1;
         wrData[3U] = (uint8_t) 0U;
+
+        /* send first cmd */
         I2C_Transaction_init(&i2cTransaction);
         i2cTransaction.writeBuf     = &wrData[0U];
-        i2cTransaction.writeCount   = 4U;
+        i2cTransaction.writeCount   = 2U;
         i2cTransaction.slaveAddress = object->i2cAddress;
         status = I2C_transfer(object->i2cHandle, &i2cTransaction);
     }
+
+    if (status == SystemP_SUCCESS)
+    {
+        /* send 2nd cmd */
+        I2C_Transaction_init(&i2cTransaction);
+        i2cTransaction.writeBuf     = &wrData[2U];
+        i2cTransaction.writeCount   = 2U;
+        i2cTransaction.slaveAddress = object->i2cAddress;
+        status = I2C_transfer(object->i2cHandle, &i2cTransaction);
+    }
+
 
     return (status);
 }
@@ -327,7 +340,17 @@ int32_t LED_pca9535dwrSetMask(LED_Config *config, uint32_t mask)
         DebugP_log("data1: %d \r\n", wrData[3U]);
         I2C_Transaction_init(&i2cTransaction);
         i2cTransaction.writeBuf     = &wrData[0U];
-        i2cTransaction.writeCount   = 4U;
+        i2cTransaction.writeCount   = 2U;
+        i2cTransaction.slaveAddress = object->i2cAddress;
+        status = I2C_transfer(object->i2cHandle, &i2cTransaction);
+    }
+
+    if (status == SystemP_SUCCESS)
+    {
+        /* send 2nd cmd */
+        I2C_Transaction_init(&i2cTransaction);
+        i2cTransaction.writeBuf     = &wrData[2U];
+        i2cTransaction.writeCount   = 2U;
         i2cTransaction.slaveAddress = object->i2cAddress;
         status = I2C_transfer(object->i2cHandle, &i2cTransaction);
     }
