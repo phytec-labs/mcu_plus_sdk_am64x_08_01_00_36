@@ -33,7 +33,7 @@ function getConfigurables() {
 
                 instance.i2cAddress = config.i2cAddress;
                 let hideConfigs = true;
-                if((instance.name == "TPIC2810") || (instance.name == "Ioexp") || (instance.name == "PCA9533D")) {
+                if((instance.name == "TPIC2810") || (instance.name == "Ioexp") || (instance.name == "PCA9533D") || (instance.name == "PCA9535DWR")) {
                     hideConfigs = false;
                 }
                 ui.i2cAddress.hidden = hideConfigs;
