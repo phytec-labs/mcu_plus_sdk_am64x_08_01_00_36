@@ -119,7 +119,7 @@ Usage:
 sdkPath = System.getenv("MCU_PLUS_SDK_AM64X_PATH");
 if(sdkPath == null)
 {
-    sdkPath = "C:/ti/mcu_plus_sdk_am64x_08_01_00_36";
+    sdkPath = "C:/ti/original2/mcu_plus_sdk_am64x_08_01_00_36";
 }
 
 // path to board config elf
