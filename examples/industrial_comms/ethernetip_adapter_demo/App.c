@@ -98,7 +98,12 @@ static bool     EI_APP_cipSetup(EI_API_CIP_NODE_T* pCipNode_p);
 static bool     EI_APP_cipCreateCallback(EI_API_CIP_NODE_T* pCipNode_p);
 
 uint32_t EI_APP_globalError_g = 0;
-uint8_t  EI_APP_pruLogicalInstance_g = EI_API_ADP_PRUICCSS_INSTANCE_TWO;
+uint8_t  EI_APP_pruLogicalInstance_g = EI_API_ADP_PRUICCSS_INSTANCE_ONE;
+
+// PHYTEC - Map some special address we need to enable the ethernet clock below for the phyCORE-AM64x and Pinger carrier board
+#define CTRLMMR_LOCK2_KICK0 (uint32_t*)0x43009008
+#define CTRLMMR_LOCK2_KICK1 (uint32_t*)0x4300900c
+#define CTRLMMR_CLKOUT_CTRL (uint32_t*)0x43008010
 
 
 /*!
@@ -559,6 +564,19 @@ laError:
     Sciclient_pmDeviceReset(0xFFFFFFFFU);
 }
 
+//Pinger carrier board
+static Pinmux_PerCfg_t My_gPinMuxMainDomainCfg[] = {
+    {
+        PIN_EXT_REFCLK1, ( PIN_MODE(5) | PIN_PULL_DISABLE )
+    },
+    {PINMUX_END, PINMUX_END}
+};
+
+void EthRefCLK_init(void)
+{
+    Pinmux_config(My_gPinMuxMainDomainCfg, PINMUX_DOMAIN_ID_MAIN);
+}
+
 /*!
  *  <!-- Description: -->
  *
@@ -576,9 +594,15 @@ int main(
     int argc,
     char* argv[])
 {
+    /* CONFIGURE PINGER CARRIER BOARD REFCLK */
+    *CTRLMMR_LOCK2_KICK0 = 0x68ef3490;  /* kick0 */
+    *CTRLMMR_LOCK2_KICK1 = 0xd172bc5a;  /* kick1 */
+    *CTRLMMR_CLKOUT_CTRL = 0x11;
+
     uint32_t err;
 
     System_init ();
+    EthRefCLK_init();
 
     OSAL_registerErrorHandler (EI_APP_osErrorHandlerCb);
 
