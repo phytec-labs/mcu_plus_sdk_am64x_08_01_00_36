@@ -320,7 +320,6 @@ int32_t LED_pca9535dwrSetMask(LED_Config *config, uint32_t mask)
     LED_Attrs      *attrs;
     uint8_t         wrData[4U];
     I2C_Transaction i2cTransaction;
-    DebugP_log("mask value: %d \r\n", mask);
 
     if(NULL == config)
     {
@@ -336,8 +335,6 @@ int32_t LED_pca9535dwrSetMask(LED_Config *config, uint32_t mask)
         wrData[1U] = (uint8_t) (mask & 0x3FU);
         wrData[2U] = PCA9535DWR_CMD_OUTPUT_PORT_1;
         wrData[3U] = (uint8_t) ((mask & 0x1C0U) >> 6);
-        DebugP_log("data0: %d \r\n", wrData[1U]);
-        DebugP_log("data1: %d \r\n", wrData[3U]);
         I2C_Transaction_init(&i2cTransaction);
         i2cTransaction.writeBuf     = &wrData[0U];
         i2cTransaction.writeCount   = 2U;
