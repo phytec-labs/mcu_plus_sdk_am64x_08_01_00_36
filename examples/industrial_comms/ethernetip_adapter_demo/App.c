@@ -83,7 +83,7 @@ extern PRUICSS_Handle prusshandle;
 
 // Global variables and pointers used in this example.
 // has to stay, used in lib_eip_lwip_ip :-(
-uint8_t EI_APP_aMacAddr_g[] = {0xc8, 0x3e, 0xa7, 0x00, 0x00, 0x59};
+uint8_t EI_APP_aMacAddr_g[] = {0xc8, 0x3e, 0xa7, 0x00, 0x00, 0x60};
 
 
 // Static variables and pointers used in this example.
@@ -171,7 +171,7 @@ void EI_APP_adpInit(void)
     uint16_t vendorId = 806;
     uint16_t deviceType = 0x002B;
     uint16_t productCode = PRODUCT_CODE_OF_CONFIGURATION;
-    uint32_t serialNumber = 0x00000065;
+    uint32_t serialNumber = 0x00000066;
 
     EI_API_ADP_SRevision_t revision;
 

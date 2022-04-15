@@ -62,7 +62,7 @@ static int16_t resetServiceFlag_s;
 static EI_APP_PERM_SCfgData_t tPermData_s;
 static EI_APP_PERM_SCfgData_t tDefaultPermData_s =
 {
-    .i32uIpAddr =       0xc0a8010a,
+    .i32uIpAddr =       0xc0a8010b,
     .i32uIpNwMask =     0xffffff00,
     .i32uIpGateway =    0xc0a80101,
     .i32uNameServer1 =  0x00000000,
@@ -241,7 +241,7 @@ bool EI_APP_PERM_read(void)
     EI_API_ADP_setQuickConnectEnabled(pAdp_s, tPermData_s.bQuickConnectEnabled);
 #endif
 
-    EI_API_ADP_setIpConfig(pAdp_s, tPermData_s.bUseDhcp, tPermData_s.i32uIpAddr, tPermData_s.i32uIpNwMask, tPermData_s.i32uIpGateway,
+    EI_API_ADP_setIpConfig(pAdp_s, tPermData_s.bUseDhcp, tDefaultPermData_s.i32uIpAddr, tPermData_s.i32uIpNwMask, tPermData_s.i32uIpGateway,
                            tPermData_s.i32uNameServer1, tPermData_s.i32uNameServer2, tPermData_s.szDomainName, false);
     return true;
 
