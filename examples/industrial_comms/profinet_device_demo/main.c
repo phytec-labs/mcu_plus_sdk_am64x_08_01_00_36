@@ -78,6 +78,29 @@ static  uint8_t          pruLogicalInstance_s = CONFIG_PRU_ICSS1 + 1;
 static void APP_taskStackMain (void *pTaskArg_p);
 static void APP_taskStackMainFunc (void *pTaskArg_p);
 
+/*
+* Mux and initialize the ethernet reference clock used in PHYTEC's phyCORE-AM64x design // True added
+*
+* sysconfig doesn't support the configuration of this pin for some reason so have to
+* manually set it up like this for now, bypassing sysconfig.
+*/
+//Pinger carrier board
+static Pinmux_PerCfg_t My_gPinMuxMainDomainCfg[] = {
+{
+    PIN_EXT_REFCLK1, ( PIN_MODE(5) | PIN_PULL_DISABLE )
+},
+    {PINMUX_END, PINMUX_END}
+};
+
+void EthRefCLK_init(void)
+{
+    Pinmux_config(My_gPinMuxMainDomainCfg, PINMUX_DOMAIN_ID_MAIN);
+}
+
+#define CTRLMMR_LOCK2_KICK0 (uint32_t*)0x43009008
+#define CTRLMMR_LOCK2_KICK1 (uint32_t*)0x4300900c
+#define CTRLMMR_CLKOUT_CTRL (uint32_t*)0x43008010
+
 /*!
 *  <!-- Description: -->
 * \brief
@@ -108,8 +131,13 @@ int main (
     int32_t         systemRetVal    =    SystemP_SUCCESS;
     uint32_t        osalRetVal      =    OSAL_eERR_NOERROR;
 
+    *CTRLMMR_LOCK2_KICK0 = 0x68ef3490;  /* kick0 */ // True add
+    *CTRLMMR_LOCK2_KICK1 = 0xd172bc5a;  /* kick1 */
+    *CTRLMMR_CLKOUT_CTRL = 0x11;    /* CLK_EN = 1, CLK_SEL = 1 */
+
     /* Initialize SoC specific modules. */
     System_init ();
+    EthRefCLK_init(); // True added
     Board_init ();
 
     /*

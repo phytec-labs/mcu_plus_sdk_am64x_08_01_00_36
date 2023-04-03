@@ -55,6 +55,8 @@
 
 #include "appPermanentData.h"
 
+#include <board/flash.h>    // True Added
+
 #include <ti_board_open_close.h>
 
 typedef struct APP_SPermHeader
@@ -82,7 +84,9 @@ typedef struct APP_SPermHeader
 #define APP_PERM_DATA_OFFSET_START  APP_PERM_DATA_OFFSET
 #define APP_PERM_DATA_OFFSET_END    (APP_PERM_DATA_OFFSET_START + sizeof (APP_SPermanentData_t))
 
-Flash_Handle flashHandle_g;
+//Flash_Handle flashHandle_g;
+Flash_Attrs gFlashAttr_MT35XU512ABA;    // True Added
+static Flash_Attrs*     flashAttribute_s    = NULL;    // True Added
 
 static int32_t APP_erasePermStorage (void);
 
@@ -505,9 +509,25 @@ int32_t APP_initPermStorage (
     int32_t     result      = SystemP_SUCCESS;
     uint32_t    checkSum    = 0;
 
-    flashHandle_g = Flash_getHandle (CONFIG_FLASH0);
+    //flashHandle_g = Flash_getHandle (CONFIG_FLASH0);     // True Added
 
-    result = Flash_read (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)&permanentDataWorkingCopy_s, sizeof (APP_SPermanentData_t));
+    gFlashAttr_MT35XU512ABA.deviceId = 0x5B1A;      // True Added
+    gFlashAttr_MT35XU512ABA.manufacturerId = 0x2c;
+    gFlashAttr_MT35XU512ABA.driverInstance = 0;
+    gFlashAttr_MT35XU512ABA.flashSize = 67108864;
+    gFlashAttr_MT35XU512ABA.blockCount = 512;
+    gFlashAttr_MT35XU512ABA.blockSize = 131072;
+    gFlashAttr_MT35XU512ABA.pageCount = 512;
+    gFlashAttr_MT35XU512ABA.pageSize = 256;
+    gFlashAttr_MT35XU512ABA.sectorCount = 16384;
+    gFlashAttr_MT35XU512ABA.sectorSize = 4096;
+    flashAttribute_s = &gFlashAttr_MT35XU512ABA;
+
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);    // True Added
+    OSPI_norFlashInit1s1s1s(ospiHandle);    // True Added
+
+    //result = Flash_read (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)&permanentDataWorkingCopy_s, sizeof (APP_SPermanentData_t));    // True Added
+    result = OSPI_norFlashRead(ospiHandle, APP_PERM_DATA_OFFSET, (uint8_t*)&permanentDataWorkingCopy_s, sizeof(APP_SPermanentData_t));    // True Added
     if (SystemP_SUCCESS != result)
     {
         goto laError;
@@ -534,7 +554,8 @@ int32_t APP_initPermStorage (
             goto laError;
         }
 
-        result = Flash_write (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)&permanentDataWorkingCopy_s, sizeof (APP_SPermanentData_t));
+        //result = Flash_write (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)&permanentDataWorkingCopy_s, sizeof (APP_SPermanentData_t));    // True Added
+        result = OSPI_norFlashWrite(ospiHandle, APP_PERM_DATA_OFFSET, (uint8_t*)&permanentDataWorkingCopy_s, sizeof(APP_SPermanentData_t));    // True Added
         if (SystemP_SUCCESS != result)
         {
             goto laError;
@@ -575,13 +596,16 @@ int32_t APP_savePermStorage (
 
     checkSum = 0;  /* TBD: calculate checksum */
     
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);    // True Added
+
     pData_p->magicNumber = (('J' << 8) | 'H');
     pData_p->version = APP_PERM_DATA_VERSION;
     pData_p->checksum = checkSum;
 
     APP_erasePermStorage ();
 
-    result = Flash_write (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)pData_p, sizeof (APP_SPermanentData_t));
+    //result = Flash_write (flashHandle_g, APP_PERM_DATA_OFFSET, (uint8_t *)pData_p, sizeof (APP_SPermanentData_t));    // True Added
+    result = OSPI_norFlashWrite(ospiHandle, APP_PERM_DATA_OFFSET, (uint8_t*)pData_p, sizeof(APP_SPermanentData_t));    // True Added
     if (SystemP_SUCCESS != result)
     {
         goto laError;
@@ -696,20 +720,22 @@ int32_t APP_erasePermStorage (
     Flash_Attrs *pAttr      = NULL;
     int32_t     result      = SystemP_SUCCESS;
     uint32_t    offset      = 0;
-    uint32_t    block       = 0;
-    uint32_t    page        = 0;
+    //uint32_t    block       = 0;     // True Added
+    //uint32_t    page        = 0;     // True Added
 
-    pAttr = Flash_getAttrs (CONFIG_FLASH0);
+    //pAttr = Flash_getAttrs (CONFIG_FLASH0);    // True Added
+    OSPI_Handle ospiHandle = OSPI_getHandle(CONFIG_OSPI0);    // True Added
 
     for (offset = APP_PERM_DATA_OFFSET_START; offset <= APP_PERM_DATA_OFFSET_END; offset += pAttr->blockSize)
     {
-        result = Flash_offsetToBlkPage (flashHandle_g, offset, &block, &page);
-        if (SystemP_SUCCESS != result)
-        {
-            goto laError;
-        }
+        //result = Flash_offsetToBlkPage (flashHandle_g, offset, &block, &page);    // True Added
+        //if (SystemP_SUCCESS != result)    // True Added
+        //{    // True Added
+        //    goto laError;    // True Added
+        //}    // True Added
 
-        result = Flash_eraseBlk (flashHandle_g, block);
+        //result = Flash_eraseBlk (flashHandle_g, block);    // True Added
+        OSPI_norFlashErase(ospiHandle, offset);    // True Added
         if (SystemP_SUCCESS != result)
         {
             goto laError;
