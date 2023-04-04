@@ -53,1287 +53,2186 @@ extern "C" {
 #define DDRSS_PHY_REG_INIT_COUNT    (507U)
 
 uint32_t DDRSS_ctlReg[] = {
-    0x00000A00, // DDRSS_CTL_0_VAL
-    0x00000000, // DDRSS_CTL_1_VAL
-    0x00000000, // DDRSS_CTL_2_VAL
-    0x00000000, // DDRSS_CTL_3_VAL
-    0x00000000, // DDRSS_CTL_4_VAL
-    0x00000000, // DDRSS_CTL_5_VAL
-    0x00000000, // DDRSS_CTL_6_VAL
-    0x000890B8, // DDRSS_CTL_7_VAL
-    0x00000000, // DDRSS_CTL_8_VAL
-    0x00000000, // DDRSS_CTL_9_VAL
-    0x00000000, // DDRSS_CTL_10_VAL
-    0x000890B8, // DDRSS_CTL_11_VAL
-    0x00000000, // DDRSS_CTL_12_VAL
-    0x00000000, // DDRSS_CTL_13_VAL
-    0x00000000, // DDRSS_CTL_14_VAL
-    0x000890B8, // DDRSS_CTL_15_VAL
-    0x00000000, // DDRSS_CTL_16_VAL
-    0x00000000, // DDRSS_CTL_17_VAL
-    0x00000000, // DDRSS_CTL_18_VAL
-    0x01010100, // DDRSS_CTL_19_VAL
-    0x01000100, // DDRSS_CTL_20_VAL
-    0x01000110, // DDRSS_CTL_21_VAL
-    0x02010002, // DDRSS_CTL_22_VAL
-    0x00027100, // DDRSS_CTL_23_VAL
-    0x00061A80, // DDRSS_CTL_24_VAL
-    0x02550255, // DDRSS_CTL_25_VAL
-    0x00000255, // DDRSS_CTL_26_VAL
-    0x00000000, // DDRSS_CTL_27_VAL
-    0x00000000, // DDRSS_CTL_28_VAL
-    0x00000000, // DDRSS_CTL_29_VAL
-    0x00000000, // DDRSS_CTL_30_VAL
-    0x00000000, // DDRSS_CTL_31_VAL
-    0x00000000, // DDRSS_CTL_32_VAL
-    0x00000000, // DDRSS_CTL_33_VAL
-    0x00000000, // DDRSS_CTL_34_VAL
-    0x00000000, // DDRSS_CTL_35_VAL
-    0x00000000, // DDRSS_CTL_36_VAL
-    0x00000000, // DDRSS_CTL_37_VAL
-    0x0400091C,//8
-    0x1C1C1C1C,//9
-    0x0400091C,//40
-    0x1C1C1C1C,//1
-    0x0400091C,//2
-    0x1C1C1C1C,//3
-    0x05050404,//4
-    0x00002806,//5
-    0x0602001D,//6
-    0x05001D0C,//7
-    0x00280605,//8
-    0x0602001D,//9
-    0x05001D0C,//50
-    0x00280605,//1
-    0x0602001D,//2
-    0x07001D0C,//3
-    0x00180807, // DDRSS_CTL_54_VAL
-    0x0400DB60, // DDRSS_CTL_55_VAL
-    0x07070009, // DDRSS_CTL_56_VAL
-    0x00001808, // DDRSS_CTL_57_VAL
-    0x0400DB60, // DDRSS_CTL_58_VAL
-    0x07070009, // DDRSS_CTL_59_VAL
-    0x00001808, // DDRSS_CTL_60_VAL
-    0x0400DB60, // DDRSS_CTL_61_VAL
-    0x03000009, // DDRSS_CTL_62_VAL
-    0x0D0D0002,//3
-    0x0D0D0D0D,//4
-    0x01010000,//5
-    0x031A1A1A,//6
-    0x0C0C0C0C,//7
-    0x00000C0C,//8
-    0x00000101, // DDRSS_CTL_69_VAL
-    0x00000000, // DDRSS_CTL_70_VAL
-    0x01000000, // DDRSS_CTL_71_VAL
-    0x01180803, // DDRSS_CTL_72_VAL
-    0x00001860, // DDRSS_CTL_73_VAL
-    0x00000118, // DDRSS_CTL_74_VAL
-    0x00001860, // DDRSS_CTL_75_VAL
-    0x00000118, // DDRSS_CTL_76_VAL
-    0x00001860, // DDRSS_CTL_77_VAL
-    0x00000005, // DDRSS_CTL_78_VAL
-    0x00000000, // DDRSS_CTL_79_VAL
-    0x00000000, // DDRSS_CTL_80_VAL
-    0x00000000, // DDRSS_CTL_81_VAL
-    0x00000000, // DDRSS_CTL_82_VAL
-    0x00000000, // DDRSS_CTL_83_VAL
-    0x00000000, // DDRSS_CTL_84_VAL
-    0x00000000, // DDRSS_CTL_85_VAL
-    0x00000000, // DDRSS_CTL_86_VAL
-    0x00090009, // DDRSS_CTL_87_VAL
-    0x00000009, // DDRSS_CTL_88_VAL
-    0x00000000, // DDRSS_CTL_89_VAL
-    0x00000000, // DDRSS_CTL_90_VAL
-    0x00000000, // DDRSS_CTL_91_VAL
-    0x00000000, // DDRSS_CTL_92_VAL
-    0x00000000, // DDRSS_CTL_93_VAL
-    0x00010001, // DDRSS_CTL_94_VAL
-    0x00025501, // DDRSS_CTL_95_VAL
-    0x02550120, // DDRSS_CTL_96_VAL
-    0x02550120, // DDRSS_CTL_97_VAL
-    0x01200120, // DDRSS_CTL_98_VAL
-    0x01200120, // DDRSS_CTL_99_VAL
-    0x00000000, // DDRSS_CTL_100_VAL
-    0x00000000, // DDRSS_CTL_101_VAL
-    0x00000000, // DDRSS_CTL_102_VAL
-    0x00000000, // DDRSS_CTL_103_VAL
-    0x00000000, // DDRSS_CTL_104_VAL
-    0x00000000, // DDRSS_CTL_105_VAL
-    0x03010000, // DDRSS_CTL_106_VAL
-    0x00010000, // DDRSS_CTL_107_VAL
-    0x00000000, // DDRSS_CTL_108_VAL
-    0x01000000, // DDRSS_CTL_109_VAL
-    0x80104002, // DDRSS_CTL_110_VAL
-    0x00040003, // DDRSS_CTL_111_VAL
-    0x00040005, // DDRSS_CTL_112_VAL
-    0x00030000, // DDRSS_CTL_113_VAL
-    0x00050004, // DDRSS_CTL_114_VAL
-    0x00000004, // DDRSS_CTL_115_VAL
-    0x00040003, // DDRSS_CTL_116_VAL
-    0x00040005, // DDRSS_CTL_117_VAL
-    0x00000000, // DDRSS_CTL_118_VAL
-    0x00061800, // DDRSS_CTL_119_VAL
-    0x00061800, // DDRSS_CTL_120_VAL
-    0x00061800, // DDRSS_CTL_121_VAL
-    0x00061800, // DDRSS_CTL_122_VAL
-    0x00061800, // DDRSS_CTL_123_VAL
-    0x00000000, // DDRSS_CTL_124_VAL
-    0x0000AAA0, // DDRSS_CTL_125_VAL
-    0x00061800, // DDRSS_CTL_126_VAL
-    0x00061800, // DDRSS_CTL_127_VAL
-    0x00061800, // DDRSS_CTL_128_VAL
-    0x00061800, // DDRSS_CTL_129_VAL
-    0x00061800, // DDRSS_CTL_130_VAL
-    0x00000000, // DDRSS_CTL_131_VAL
-    0x0000AAA0, // DDRSS_CTL_132_VAL
-    0x00061800, // DDRSS_CTL_133_VAL
-    0x00061800, // DDRSS_CTL_134_VAL
-    0x00061800, // DDRSS_CTL_135_VAL
-    0x00061800, // DDRSS_CTL_136_VAL
-    0x00061800, // DDRSS_CTL_137_VAL
-    0x00000000, // DDRSS_CTL_138_VAL
-    0x0000AAA0, // DDRSS_CTL_139_VAL
-    0x00000000, // DDRSS_CTL_140_VAL
-    0x00000000, // DDRSS_CTL_141_VAL
-    0x00000000, // DDRSS_CTL_142_VAL
-    0x00000000, // DDRSS_CTL_143_VAL
-    0x00000000, // DDRSS_CTL_144_VAL
-    0x00000000, // DDRSS_CTL_145_VAL
-    0x00000000, // DDRSS_CTL_146_VAL
-    0x00000000, // DDRSS_CTL_147_VAL
-    0x00000000, // DDRSS_CTL_148_VAL
-    0x00000000, // DDRSS_CTL_149_VAL
-    0x00000000, // DDRSS_CTL_150_VAL
-    0x00000000, // DDRSS_CTL_151_VAL
-    0x00000000, // DDRSS_CTL_152_VAL
-    0x00000000, // DDRSS_CTL_153_VAL
-    0x00000000, // DDRSS_CTL_154_VAL
-    0x00000000, // DDRSS_CTL_155_VAL
-    0x080C0000, // DDRSS_CTL_156_VAL
-    0x080C080C, // DDRSS_CTL_157_VAL
-    0x00000000, // DDRSS_CTL_158_VAL
-    0x07010A09, // DDRSS_CTL_159_VAL
-    0x000E0A09, // DDRSS_CTL_160_VAL
-    0x010A0900, // DDRSS_CTL_161_VAL
-    0x0E0A0907, // DDRSS_CTL_162_VAL
-    0x0A090000, // DDRSS_CTL_163_VAL
-    0x0A090701, // DDRSS_CTL_164_VAL
-    0x0000000E, // DDRSS_CTL_165_VAL
-    0x00040003, // DDRSS_CTL_166_VAL
-    0x00000007, // DDRSS_CTL_167_VAL
-    0x00000000, // DDRSS_CTL_168_VAL
-    0x00000000, // DDRSS_CTL_169_VAL
-    0x00000000, // DDRSS_CTL_170_VAL
-    0x00000000, // DDRSS_CTL_171_VAL
-    0x00000000, // DDRSS_CTL_172_VAL
-    0x00000000, // DDRSS_CTL_173_VAL
-    0x01000000, // DDRSS_CTL_174_VAL
-    0x00000000, // DDRSS_CTL_175_VAL
-    0x00001500, // DDRSS_CTL_176_VAL
-    0x0000100E, // DDRSS_CTL_177_VAL
-    0x00000000, // DDRSS_CTL_178_VAL
-    0x00000000, // DDRSS_CTL_179_VAL
-    0x00000001, // DDRSS_CTL_180_VAL
-    0x00000002, // DDRSS_CTL_181_VAL
-    0x00000C00, // DDRSS_CTL_182_VAL
-    0x00001000, // DDRSS_CTL_183_VAL
-    0x00000C00, // DDRSS_CTL_184_VAL
-    0x00001000, // DDRSS_CTL_185_VAL
-    0x00000C00, // DDRSS_CTL_186_VAL
-    0x00001000, // DDRSS_CTL_187_VAL
-    0x00000000, // DDRSS_CTL_188_VAL
-    0x00000000, // DDRSS_CTL_189_VAL
-    0x00000000, // DDRSS_CTL_190_VAL
-    0x00000000, // DDRSS_CTL_191_VAL
-    0x00000000, // DDRSS_CTL_192_VAL
-    0x00000000, // DDRSS_CTL_193_VAL
-    0x00000000, // DDRSS_CTL_194_VAL
-    0x00000000, // DDRSS_CTL_195_VAL
-    0x00000000, // DDRSS_CTL_196_VAL
-    0x00000000, // DDRSS_CTL_197_VAL
-    0x00000000, // DDRSS_CTL_198_VAL
-    0x00000000, // DDRSS_CTL_199_VAL
-    0x00000000, // DDRSS_CTL_200_VAL
-    0x00000000, // DDRSS_CTL_201_VAL
-    0x00000000, // DDRSS_CTL_202_VAL
-    0x00000000, // DDRSS_CTL_203_VAL
-    0x00042400,//4
-    0x00000301,//5
-    0x00000000,//6
-    0x00000424,//7
-    0x00000301,//8
-    0x00000000,//9
-    0x00000424,//210
-    0x00000301,//1
-    0x00000000,//2
-    0x00000424,//3
-    0x00000301,//4
-    0x00000000,//5
-    0x00000424,//6
-    0x00000301,//7
-    0x00000000,//8
-    0x00000424,//9
-    0x00000301, // DDRSS_CTL_220_VAL
-    0x00000000, // DDRSS_CTL_221_VAL
-    0x00000000, // DDRSS_CTL_222_VAL
-    0x00000000, // DDRSS_CTL_223_VAL
-    0x00000000, // DDRSS_CTL_224_VAL
-    0x00000000, // DDRSS_CTL_225_VAL
-    0x00000000, // DDRSS_CTL_226_VAL
-    0x00000000, // DDRSS_CTL_227_VAL
-    0x00000000, // DDRSS_CTL_228_VAL
-    0x00000000, // DDRSS_CTL_229_VAL
-    0x00000000, // DDRSS_CTL_230_VAL
-    0x00000000, // DDRSS_CTL_231_VAL
-    0x00000000, // DDRSS_CTL_232_VAL
-    0x00000000, // DDRSS_CTL_233_VAL
-    0x00000000, // DDRSS_CTL_234_VAL
-    0x00000000, // DDRSS_CTL_235_VAL
-    0x00001401,//6
-    0x00001401,//7
-    0x00001401,//8
-    0x00001401,//9
-    0x00001401,//240
-    0x00001401,//1
-    0x00000493, // DDRSS_CTL_242_VAL
-    0x00000493, // DDRSS_CTL_243_VAL
-    0x00000493, // DDRSS_CTL_244_VAL
-    0x00000493, // DDRSS_CTL_245_VAL
-    0x00000493, // DDRSS_CTL_246_VAL
-    0x00000493, // DDRSS_CTL_247_VAL
-    0x00000000, // DDRSS_CTL_248_VAL
-    0x00000000, // DDRSS_CTL_249_VAL
-    0x00000000, // DDRSS_CTL_250_VAL
-    0x00000000, // DDRSS_CTL_251_VAL
-    0x00000000, // DDRSS_CTL_252_VAL
-    0x00000000, // DDRSS_CTL_253_VAL
-    0x00000000, // DDRSS_CTL_254_VAL
-    0x00000000, // DDRSS_CTL_255_VAL
-    0x00000000, // DDRSS_CTL_256_VAL
-    0x00000000, // DDRSS_CTL_257_VAL
-    0x00000000, // DDRSS_CTL_258_VAL
-    0x00000000, // DDRSS_CTL_259_VAL
-    0x00000000, // DDRSS_CTL_260_VAL
-    0x00000000, // DDRSS_CTL_261_VAL
-    0x00000000, // DDRSS_CTL_262_VAL
-    0x00000000, // DDRSS_CTL_263_VAL
-    0x00000000, // DDRSS_CTL_264_VAL
-    0x00000000, // DDRSS_CTL_265_VAL
-    0x00000000, // DDRSS_CTL_266_VAL
-    0x00000000, // DDRSS_CTL_267_VAL
-    0x00000000, // DDRSS_CTL_268_VAL
-    0x00000000, // DDRSS_CTL_269_VAL
-    0x00000000, // DDRSS_CTL_270_VAL
-    0x00000000, // DDRSS_CTL_271_VAL
-    0x00000000, // DDRSS_CTL_272_VAL
-    0x00000000, // DDRSS_CTL_273_VAL
-    0x00000000, // DDRSS_CTL_274_VAL
-    0x00000000, // DDRSS_CTL_275_VAL
-    0x00000000, // DDRSS_CTL_276_VAL
-    0x00010000, // DDRSS_CTL_277_VAL
-    0x00000000, // DDRSS_CTL_278_VAL
-    0x00000000, // DDRSS_CTL_279_VAL
-    0x00000000, // DDRSS_CTL_280_VAL
-    0x00000101, // DDRSS_CTL_281_VAL
-    0x00000000, // DDRSS_CTL_282_VAL
-    0x00000000, // DDRSS_CTL_283_VAL
-    0x00000000, // DDRSS_CTL_284_VAL
-    0x00000000, // DDRSS_CTL_285_VAL
-    0x00000000, // DDRSS_CTL_286_VAL
-    0x00000000, // DDRSS_CTL_287_VAL
-    0x00000000, // DDRSS_CTL_288_VAL
-    0x00000000, // DDRSS_CTL_289_VAL
-    0x0C181511, // DDRSS_CTL_290_VAL
-    0x00000304, // DDRSS_CTL_291_VAL
-    0x00000000, // DDRSS_CTL_292_VAL
-    0x00000000, // DDRSS_CTL_293_VAL
-    0x00000000, // DDRSS_CTL_294_VAL
-    0x00000000, // DDRSS_CTL_295_VAL
-    0x00000000, // DDRSS_CTL_296_VAL
-    0x00000000, // DDRSS_CTL_297_VAL
-    0x00000000, // DDRSS_CTL_298_VAL
-    0x00000000, // DDRSS_CTL_299_VAL
-    0x00000000, // DDRSS_CTL_300_VAL
-    0x00000000, // DDRSS_CTL_301_VAL
-    0x00000000, // DDRSS_CTL_302_VAL
-    0x00000000, // DDRSS_CTL_303_VAL
-    0x00000000, // DDRSS_CTL_304_VAL
-    0x00040000, // DDRSS_CTL_305_VAL
-    0x00800200, // DDRSS_CTL_306_VAL
-    0x00000000, // DDRSS_CTL_307_VAL
-    0x02000400, // DDRSS_CTL_308_VAL
-    0x00000080, // DDRSS_CTL_309_VAL
-    0x00040000, // DDRSS_CTL_310_VAL
-    0x00800200, // DDRSS_CTL_311_VAL
-    0x00000000, // DDRSS_CTL_312_VAL
-    0x00000000, // DDRSS_CTL_313_VAL
-    0x00000000, // DDRSS_CTL_314_VAL
-    0x00000100, // DDRSS_CTL_315_VAL
-    0x01010000, // DDRSS_CTL_316_VAL
-    0x00000000, // DDRSS_CTL_317_VAL
-    0x3FFF0000, // DDRSS_CTL_318_VAL
-    0x000FFF00, // DDRSS_CTL_319_VAL
-    0xFFFFFFFF, // DDRSS_CTL_320_VAL
-    0x000FFF00, // DDRSS_CTL_321_VAL
-    0x0A000000, // DDRSS_CTL_322_VAL
-    0x0001FFFF, // DDRSS_CTL_323_VAL
-    0x01010101, // DDRSS_CTL_324_VAL
-    0x01010101, // DDRSS_CTL_325_VAL
-    0x00000118, // DDRSS_CTL_326_VAL
-    0x00000C01, // DDRSS_CTL_327_VAL
-    0x00000000, // DDRSS_CTL_328_VAL
-    0x00000000, // DDRSS_CTL_329_VAL
-    0x01000000, // DDRSS_CTL_330_VAL
-    0x01000000, // DDRSS_CTL_331_VAL
-    0x00000100,//32
-    0x00010000, // DDRSS_CTL_333_VAL
-    0x00000000, // DDRSS_CTL_334_VAL
-    0x00000000, // DDRSS_CTL_335_VAL
-    0x00000000, // DDRSS_CTL_336_VAL
-    0x00000000, // DDRSS_CTL_337_VAL
-    0x00000000, // DDRSS_CTL_338_VAL
-    0x00000000, // DDRSS_CTL_339_VAL
-    0x00000000, // DDRSS_CTL_340_VAL
-    0x00000000, // DDRSS_CTL_341_VAL
-    0x00000000, // DDRSS_CTL_342_VAL
-    0x00000000, // DDRSS_CTL_343_VAL
-    0x00000000, // DDRSS_CTL_344_VAL
-    0x00000000, // DDRSS_CTL_345_VAL
-    0x00000000, // DDRSS_CTL_346_VAL
-    0x00000000, // DDRSS_CTL_347_VAL
-    0x00000000, // DDRSS_CTL_348_VAL
-    0x00000000, // DDRSS_CTL_349_VAL
-    0x00000000, // DDRSS_CTL_350_VAL
-    0x00000000, // DDRSS_CTL_351_VAL
-    0x00000000, // DDRSS_CTL_352_VAL
-    0x00000000, // DDRSS_CTL_353_VAL
-    0x00000000, // DDRSS_CTL_354_VAL
-    0x00000000, // DDRSS_CTL_355_VAL
-    0x00000000, // DDRSS_CTL_356_VAL
-    0x00000000, // DDRSS_CTL_357_VAL
-    0x00000000, // DDRSS_CTL_358_VAL
-    0x00000000, // DDRSS_CTL_359_VAL
-    0x00000000, // DDRSS_CTL_360_VAL
-    0x00000000, // DDRSS_CTL_361_VAL
-    0x00000000, // DDRSS_CTL_362_VAL
-    0x00000000, // DDRSS_CTL_363_VAL
-    0x00000000, // DDRSS_CTL_364_VAL
-    0x00000000, // DDRSS_CTL_365_VAL
-    0x00000000, // DDRSS_CTL_366_VAL
-    0x00000000, // DDRSS_CTL_367_VAL
-    0x00000000, // DDRSS_CTL_368_VAL
-    0x00000000, // DDRSS_CTL_369_VAL
-    0x0C000000, // DDRSS_CTL_370_VAL
-    0x060C0606, // DDRSS_CTL_371_VAL
-    0x06060C06, // DDRSS_CTL_372_VAL
-    0x00010101, // DDRSS_CTL_373_VAL
-    0x02000000, // DDRSS_CTL_374_VAL
-    0x05020101,//5
-    0x00000505,//6
-    0x02020200, // DDRSS_CTL_377_VAL
-    0x02020202, // DDRSS_CTL_378_VAL
-    0x02020202, // DDRSS_CTL_379_VAL
-    0x02020202, // DDRSS_CTL_380_VAL
-    0x00000000, // DDRSS_CTL_381_VAL
-    0x00000000, // DDRSS_CTL_382_VAL
-    0x04000100, // DDRSS_CTL_383_VAL
-    0x1E000004, // DDRSS_CTL_384_VAL
-    0x000030C0, // DDRSS_CTL_385_VAL
-    0x00000200, // DDRSS_CTL_386_VAL
-    0x00000200, // DDRSS_CTL_387_VAL
-    0x00000200, // DDRSS_CTL_388_VAL
-    0x00000200, // DDRSS_CTL_389_VAL
-    0x0000DB60, // DDRSS_CTL_390_VAL
-    0x0001E780, // DDRSS_CTL_391_VAL
-    0x0C0D0302,//2
-    0x001E090A, // DDRSS_CTL_393_VAL
-    0x000030C0, // DDRSS_CTL_394_VAL
-    0x00000200, // DDRSS_CTL_395_VAL
-    0x00000200, // DDRSS_CTL_396_VAL
-    0x00000200, // DDRSS_CTL_397_VAL
-    0x00000200, // DDRSS_CTL_398_VAL
-    0x0000DB60, // DDRSS_CTL_399_VAL
-    0x0001E780, // DDRSS_CTL_400_VAL
-    0x0C0D0302,//1
-    0x001E090A, // DDRSS_CTL_402_VAL
-    0x000030C0, // DDRSS_CTL_403_VAL
-    0x00000200, // DDRSS_CTL_404_VAL
-    0x00000200, // DDRSS_CTL_405_VAL
-    0x00000200, // DDRSS_CTL_406_VAL
-    0x00000200, // DDRSS_CTL_407_VAL
-    0x0000DB60, // DDRSS_CTL_408_VAL
-    0x0001E780, // DDRSS_CTL_409_VAL
-    0x0C0D0302,//410
-    0x0000090A, // DDRSS_CTL_411_VAL
-    0x00000000, // DDRSS_CTL_412_VAL
-    0x0302000A, // DDRSS_CTL_413_VAL
-    0x01000500, // DDRSS_CTL_414_VAL
-    0x01010001, // DDRSS_CTL_415_VAL
-    0x00010001, // DDRSS_CTL_416_VAL
-    0x01010001, // DDRSS_CTL_417_VAL
-    0x02010000, // DDRSS_CTL_418_VAL
-    0x00000200, // DDRSS_CTL_419_VAL
-    0x02000201, // DDRSS_CTL_420_VAL
-    0x00000000, // DDRSS_CTL_421_VAL
-    0x00202020, // DDRSS_CTL_422_VAL
+                           0x00000A00,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x000890B8,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x000890B8,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x000890B8,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x01010100,
+                           0x01000100,
+                           0x01000110,
+                           0x02010002,
+                           0x00027100,
+                           0x00061A80,
+                           0x02550255,
+                           0x00000255,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0400091C,
+                           0x1C1C1C1C,
+                           0x0400091C,
+                           0x1C1C1C1C,
+                           0x0400091C,
+                           0x1C1C1C1C,
+                           0x05050404,
+                           0x00002806,
+                           0x0602001D,
+                           0x05001D0C,
+                           0x00280605,
+                           0x0602001D,
+                           0x05001D0C,
+                           0x00280605,
+                           0x0602001D,
+                           0x07001D0C,
+                           0x00180807,
+                           0x0400DB60,
+                           0x07070009,
+                           0x00001808,
+                           0x0400DB60,
+                           0x07070009,
+                           0x00001808,
+                           0x0400DB60,
+                           0x03000009,
+                           0x0D0D0002,
+                           0x0D0D0D0D,
+                           0x01010000,
+                           0x031A1A1A,
+                           0x0C0C0C0C,
+                           0x00000C0C,
+                           0x00000101,
+                           0x00000000,
+                           0x01000000,
+                           0x01180803,
+                           0x00001860,
+                           0x00000118,
+                           0x00001860,
+                           0x00000118,
+                           0x00001860,
+                           0x00000005,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00090009,
+                           0x00000009,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00010001,
+                           0x00025501,
+                           0x02550120,
+                           0x02550120,
+                           0x01200120,
+                           0x01200120,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x03010000,
+                           0x00010000,
+                           0x00000000,
+                           0x01000000,
+                           0x80104002,
+                           0x00040003,
+                           0x00040005,
+                           0x00030000,
+                           0x00050004,
+                           0x00000004,
+                           0x00040003,
+                           0x00040005,
+                           0x00000000,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00000000,
+                           0x0000AAA0,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00000000,
+                           0x0000AAA0,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00061800,
+                           0x00000000,
+                           0x0000AAA0,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x080C0000,
+                           0x080C080C,
+                           0x00000000,
+                           0x07010A09,
+                           0x000E0A09,
+                           0x010A0900,
+                           0x0E0A0907,
+                           0x0A090000,
+                           0x0A090701,
+                           0x0000000E,
+                           0x00040003,
+                           0x00000007,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x01000000,
+                           0x00000000,
+                           0x00001500,
+                           0x0000100E,
+                           0x00000000,
+                           0x00000000,
+                           0x00000001,
+                           0x00000002,
+                           0x00000C00,
+                           0x00001000,
+                           0x00000C00,
+                           0x00001000,
+                           0x00000C00,
+                           0x00001000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00042400,
+                           0x00000301,
+                           0x00000000,
+                           0x00000424,
+                           0x00000301,
+                           0x00000000,
+                           0x00000424,
+                           0x00000301,
+                           0x00000000,
+                           0x00000424,
+                           0x00000301,
+                           0x00000000,
+                           0x00000424,
+                           0x00000301,
+                           0x00000000,
+                           0x00000424,
+                           0x00000301,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00001401,
+                           0x00001401,
+                           0x00001401,
+                           0x00001401,
+                           0x00001401,
+                           0x00001401,
+                           0x00000493,
+                           0x00000493,
+                           0x00000493,
+                           0x00000493,
+                           0x00000493,
+                           0x00000493,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00010000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000101,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0C181511,
+                           0x00000304,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00040000,
+                           0x00800200,
+                           0x00000000,
+                           0x02000400,
+                           0x00000080,
+                           0x00040000,
+                           0x00800200,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x01010000,
+                           0x00000000,
+                           0x3FFF0000,
+                           0x000FFF00,
+                           0xFFFFFFFF,
+                           0x000FFF00,
+                           0x0A000000,
+                           0x0001FFFF,
+                           0x01010101,
+                           0x01010101,
+                           0x00000118,
+                           0x00000C01,
+                           0x00000000,
+                           0x00000000,
+                           0x01000000,
+                           0x01000000,
+                           0x00000100,
+                           0x00010000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0C000000,
+                           0x060C0606,
+                           0x06060C06,
+                           0x00010101,
+                           0x02000000,
+                           0x05020101,
+                           0x00000505,
+                           0x02020200,
+                           0x02020202,
+                           0x02020202,
+                           0x02020202,
+                           0x00000000,
+                           0x00000000,
+                           0x04000100,
+                           0x1E000004,
+                           0x000030C0,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x0000DB60,
+                           0x0001E780,
+                           0x0C0D0302,
+                           0x001E090A,
+                           0x000030C0,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x0000DB60,
+                           0x0001E780,
+                           0x0C0D0302,
+                           0x001E090A,
+                           0x000030C0,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x00000200,
+                           0x0000DB60,
+                           0x0001E780,
+                           0x0C0D0302,
+                           0x0000090A,
+                           0x00000000,
+                           0x0302000A,
+                           0x01000500,
+                           0x01010001,
+                           0x00010001,
+                           0x01010001,
+                           0x02010000,
+                           0x00000200,
+                           0x02000201,
+                           0x00000000,
+                           0x00202020,
 };
 
 uint32_t DDRSS_phyIndepReg[] = {
-    0x00000A00, // DDRSS_PI_0_VAL
-    0x00000000, // DDRSS_PI_1_VAL
-    0x00000000, // DDRSS_PI_2_VAL
-    0x01000000, // DDRSS_PI_3_VAL
-    0x00000001, // DDRSS_PI_4_VAL
-    0x00010064, // DDRSS_PI_5_VAL
-    0x00000000, // DDRSS_PI_6_VAL
-    0x00000000, // DDRSS_PI_7_VAL
-    0x00000000, // DDRSS_PI_8_VAL
-    0x00000000, // DDRSS_PI_9_VAL
-    0x00000000, // DDRSS_PI_10_VAL
-    0x00000000, // DDRSS_PI_11_VAL
-    0x00000000, // DDRSS_PI_12_VAL
-    0x00010001, // DDRSS_PI_13_VAL
-    0x00000000, // DDRSS_PI_14_VAL
-    0x00010001, // DDRSS_PI_15_VAL
-    0x00000005, // DDRSS_PI_16_VAL
-    0x00000000, // DDRSS_PI_17_VAL
-    0x00000000, // DDRSS_PI_18_VAL
-    0x00000000, // DDRSS_PI_19_VAL
-    0x00000000, // DDRSS_PI_20_VAL
-    0x00000000, // DDRSS_PI_21_VAL
-    0x00000000, // DDRSS_PI_22_VAL
-    0x00000000, // DDRSS_PI_23_VAL
-    0x280D0001, // DDRSS_PI_24_VAL
-    0x00000000, // DDRSS_PI_25_VAL
-    0x00010000, // DDRSS_PI_26_VAL
-    0x00003200, // DDRSS_PI_27_VAL
-    0x00000000, // DDRSS_PI_28_VAL
-    0x00000000, // DDRSS_PI_29_VAL
-    0x00060602, // DDRSS_PI_30_VAL
-    0x00000000, // DDRSS_PI_31_VAL
-    0x00000000, // DDRSS_PI_32_VAL
-    0x00000000, // DDRSS_PI_33_VAL
-    0x00000001, // DDRSS_PI_34_VAL
-    0x00000055, // DDRSS_PI_35_VAL
-    0x000000AA, // DDRSS_PI_36_VAL
-    0x000000AD, // DDRSS_PI_37_VAL
-    0x00000052, // DDRSS_PI_38_VAL
-    0x0000006A, // DDRSS_PI_39_VAL
-    0x00000095, // DDRSS_PI_40_VAL
-    0x00000095, // DDRSS_PI_41_VAL
-    0x000000AD, // DDRSS_PI_42_VAL
-    0x00000000, // DDRSS_PI_43_VAL
-    0x00000000, // DDRSS_PI_44_VAL
-    0x00010100, // DDRSS_PI_45_VAL
-    0x00000014, // DDRSS_PI_46_VAL
-    0x000007D0, // DDRSS_PI_47_VAL
-    0x00000300, // DDRSS_PI_48_VAL
-    0x00000000, // DDRSS_PI_49_VAL
-    0x00000000, // DDRSS_PI_50_VAL
-    0x01000000, // DDRSS_PI_51_VAL
-    0x00010101, // DDRSS_PI_52_VAL
-    0x01000000, // DDRSS_PI_53_VAL
-    0x00000000, // DDRSS_PI_54_VAL
-    0x00010000, // DDRSS_PI_55_VAL
-    0x00000000, // DDRSS_PI_56_VAL
-    0x00000000, // DDRSS_PI_57_VAL
-    0x00000000, // DDRSS_PI_58_VAL
-    0x00000000, // DDRSS_PI_59_VAL
-    0x00001400, // DDRSS_PI_60_VAL
-    0x00000000, // DDRSS_PI_61_VAL
-    0x01000000, // DDRSS_PI_62_VAL
-    0x00000404, // DDRSS_PI_63_VAL
-    0x00000001, // DDRSS_PI_64_VAL
-    0x0001010E, // DDRSS_PI_65_VAL
-    0x02040100, // DDRSS_PI_66_VAL
-    0x00010000, // DDRSS_PI_67_VAL
-    0x00000034, // DDRSS_PI_68_VAL
-    0x00000000, // DDRSS_PI_69_VAL
-    0x00000000, // DDRSS_PI_70_VAL
-    0x00000000, // DDRSS_PI_71_VAL
-    0x00000000, // DDRSS_PI_72_VAL
-    0x00000000, // DDRSS_PI_73_VAL
-    0x00000000, // DDRSS_PI_74_VAL
-    0x00000005, // DDRSS_PI_75_VAL
-    0x01000000, // DDRSS_PI_76_VAL
-    0x04000100, // DDRSS_PI_77_VAL
-    0x00020000, // DDRSS_PI_78_VAL
-    0x00010002, // DDRSS_PI_79_VAL
-    0x00000001, // DDRSS_PI_80_VAL
-    0x00020001, // DDRSS_PI_81_VAL
-    0x00020002, // DDRSS_PI_82_VAL
-    0x00000000, // DDRSS_PI_83_VAL
-    0x00000000, // DDRSS_PI_84_VAL
-    0x00000000, // DDRSS_PI_85_VAL
-    0x00000000, // DDRSS_PI_86_VAL
-    0x00000000, // DDRSS_PI_87_VAL
-    0x00000000, // DDRSS_PI_88_VAL
-    0x00000000, // DDRSS_PI_89_VAL
-    0x00000000, // DDRSS_PI_90_VAL
-    0x00000300, // DDRSS_PI_91_VAL
-    0x0A090B0C, // DDRSS_PI_92_VAL
-    0x04060708, // DDRSS_PI_93_VAL
-    0x01000005, // DDRSS_PI_94_VAL
-    0x00000800, // DDRSS_PI_95_VAL
-    0x00000000, // DDRSS_PI_96_VAL
-    0x00010008, // DDRSS_PI_97_VAL
-    0x00000000, // DDRSS_PI_98_VAL
-    0x0000AA00, // DDRSS_PI_99_VAL
-    0x00000000, // DDRSS_PI_100_VAL
-    0x00010000, // DDRSS_PI_101_VAL
-    0x00000000, // DDRSS_PI_102_VAL
-    0x00000000, // DDRSS_PI_103_VAL
-    0x00000000, // DDRSS_PI_104_VAL
-    0x00000000, // DDRSS_PI_105_VAL
-    0x00000000, // DDRSS_PI_106_VAL
-    0x00000000, // DDRSS_PI_107_VAL
-    0x00000000, // DDRSS_PI_108_VAL
-    0x00000000, // DDRSS_PI_109_VAL
-    0x00000000, // DDRSS_PI_110_VAL
-    0x00000000, // DDRSS_PI_111_VAL
-    0x00000000, // DDRSS_PI_112_VAL
-    0x00000000, // DDRSS_PI_113_VAL
-    0x00000000, // DDRSS_PI_114_VAL
-    0x00000000, // DDRSS_PI_115_VAL
-    0x00000000, // DDRSS_PI_116_VAL
-    0x00000000, // DDRSS_PI_117_VAL
-    0x00000000, // DDRSS_PI_118_VAL
-    0x00000000, // DDRSS_PI_119_VAL
-    0x00000000, // DDRSS_PI_120_VAL
-    0x00000000, // DDRSS_PI_121_VAL
-    0x00000000, // DDRSS_PI_122_VAL
-    0x00000000, // DDRSS_PI_123_VAL
-    0x00000008, // DDRSS_PI_124_VAL
-    0x00000000, // DDRSS_PI_125_VAL
-    0x00000000, // DDRSS_PI_126_VAL
-    0x00000000, // DDRSS_PI_127_VAL
-    0x00000000, // DDRSS_PI_128_VAL
-    0x00000000, // DDRSS_PI_129_VAL
-    0x00000000, // DDRSS_PI_130_VAL
-    0x00000000, // DDRSS_PI_131_VAL
-    0x00000000, // DDRSS_PI_132_VAL
-    0x00010100, // DDRSS_PI_133_VAL
-    0x00000000, // DDRSS_PI_134_VAL
-    0x00000000, // DDRSS_PI_135_VAL
-    0x00027100, // DDRSS_PI_136_VAL
-    0x00061A80, // DDRSS_PI_137_VAL
-    0x00000100, // DDRSS_PI_138_VAL
-    0x00000000, // DDRSS_PI_139_VAL
-    0x00000000, // DDRSS_PI_140_VAL
-    0x00000000, // DDRSS_PI_141_VAL
-    0x00000000, // DDRSS_PI_142_VAL
-    0x00000000, // DDRSS_PI_143_VAL
-    0x01000000, // DDRSS_PI_144_VAL
-    0x00010003, // DDRSS_PI_145_VAL
-    0x02000101, // DDRSS_PI_146_VAL
-    0x01030001, // DDRSS_PI_147_VAL
-    0x00010400, // DDRSS_PI_148_VAL
-    0x06000105, // DDRSS_PI_149_VAL
-    0x01070001, // DDRSS_PI_150_VAL
-    0x00000000, // DDRSS_PI_151_VAL
-    0x00000000, // DDRSS_PI_152_VAL
-    0x00000000, // DDRSS_PI_153_VAL
-    0x00010000, // DDRSS_PI_154_VAL
-    0x00000000, // DDRSS_PI_155_VAL
-    0x00000000, // DDRSS_PI_156_VAL
-    0x00000000, // DDRSS_PI_157_VAL
-    0x00000000, // DDRSS_PI_158_VAL
-    0x00010000, // DDRSS_PI_159_VAL
-    0x00000004, // DDRSS_PI_160_VAL
-    0x00000000, // DDRSS_PI_161_VAL
-    0x00000000, // DDRSS_PI_162_VAL
-    0x00000000, // DDRSS_PI_163_VAL
-    0x00007800, // DDRSS_PI_164_VAL
-    0x00780078, // DDRSS_PI_165_VAL
-    0x00141414, // DDRSS_PI_166_VAL
-    0x0000003A,//7
-    0x0000003A,//8
-    0x0004003A,//9
-    0x04000400,//170
-    0x68040009,//1
-    0x0400091C,//2
-    0x00091C68,//3
-    0x001C6804,//4
-    0x00000118, // DDRSS_PI_175_VAL
-    0x00001860, // DDRSS_PI_176_VAL
-    0x00000118, // DDRSS_PI_177_VAL
-    0x00001860, // DDRSS_PI_178_VAL
-    0x00000118, // DDRSS_PI_179_VAL
-    0x04001860, // DDRSS_PI_180_VAL
-    0x01010404, // DDRSS_PI_181_VAL
-    0x00001901, // DDRSS_PI_182_VAL
-    0x00190019, // DDRSS_PI_183_VAL
-    0x010C010C, // DDRSS_PI_184_VAL
-    0x0000010C, // DDRSS_PI_185_VAL
-    0x00000000, // DDRSS_PI_186_VAL
-    0x05000000,//7
-    0x01010505,//8
-    0x01010101, // DDRSS_PI_189_VAL
-    0x00181818, // DDRSS_PI_190_VAL
-    0x00000000, // DDRSS_PI_191_VAL
-    0x00000000, // DDRSS_PI_192_VAL
-    0x0D000000,//3
-    0x0A0A0D0D,//4
-    0x0303030A, // DDRSS_PI_195_VAL
-    0x00000000, // DDRSS_PI_196_VAL
-    0x00000000, // DDRSS_PI_197_VAL
-    0x00000000, // DDRSS_PI_198_VAL
-    0x00000000, // DDRSS_PI_199_VAL
-    0x00000000, // DDRSS_PI_200_VAL
-    0x00000000, // DDRSS_PI_201_VAL
-    0x00000000, // DDRSS_PI_202_VAL
-    0x00000000, // DDRSS_PI_203_VAL
-    0x00000000, // DDRSS_PI_204_VAL
-    0x00000000, // DDRSS_PI_205_VAL
-    0x00000000, // DDRSS_PI_206_VAL
-    0x00000000, // DDRSS_PI_207_VAL
-    0x00000000, // DDRSS_PI_208_VAL
-    0x0D090000, // DDRSS_PI_209_VAL
-    0x0D09000D, // DDRSS_PI_210_VAL
-    0x0D09000D, // DDRSS_PI_211_VAL
-    0x0000000D, // DDRSS_PI_212_VAL
-    0x00000000, // DDRSS_PI_213_VAL
-    0x00000000, // DDRSS_PI_214_VAL
-    0x00000000, // DDRSS_PI_215_VAL
-    0x00000000, // DDRSS_PI_216_VAL
-    0x16000000, // DDRSS_PI_217_VAL
-    0x001600C8, // DDRSS_PI_218_VAL
-    0x001600C8, // DDRSS_PI_219_VAL
-    0x010100C8, // DDRSS_PI_220_VAL
-    0x00001B01, // DDRSS_PI_221_VAL
-    0x1F0F0053,//2
-    0x05000001,//3
-    0x001B0A0D,//4
-    0x1F0F0053,//5
-    0x05000001,//6
-    0x001B0A0D,//7
-    0x1F0F0053,//8
-    0x05000001,//9
-    0x00010A0D,//230
-    0x0D0C0700,//21
-    0x000D0605, // DDRSS_PI_232_VAL
-    0x0000C570, // DDRSS_PI_233_VAL
-    0x0000001D, // DDRSS_PI_234_VAL
-    0x180A0800, // DDRSS_PI_235_VAL
-    0x0C071C1C,//6
-    0x0D06050D,//7
-    0x0000C570, // DDRSS_PI_238_VAL
-    0x0000001D, // DDRSS_PI_239_VAL
-    0x180A0800, // DDRSS_PI_240_VAL
-    0x0B071C1C, // DDRSS_PI_241_VAL
-    0x0D06050C, // DDRSS_PI_242_VAL
-    0x0000C570, // DDRSS_PI_243_VAL
-    0x0000001D, // DDRSS_PI_244_VAL
-    0x180A0800, // DDRSS_PI_245_VAL
-    0x00001C1C, // DDRSS_PI_246_VAL
-    0x000030C0, // DDRSS_PI_247_VAL
-    0x0001E780, // DDRSS_PI_248_VAL
-    0x000030C0, // DDRSS_PI_249_VAL
-    0x0001E780, // DDRSS_PI_250_VAL
-    0x000030C0, // DDRSS_PI_251_VAL
-    0x0001E780, // DDRSS_PI_252_VAL
-    0x02550255, // DDRSS_PI_253_VAL
-    0x03030255, // DDRSS_PI_254_VAL
-    0x00025503, // DDRSS_PI_255_VAL
-    0x02550255, // DDRSS_PI_256_VAL
-    0x0C080C08, // DDRSS_PI_257_VAL
-    0x00000C08, // DDRSS_PI_258_VAL
-    0x000890B8, // DDRSS_PI_259_VAL
-    0x00000000, // DDRSS_PI_260_VAL
-    0x00000000, // DDRSS_PI_261_VAL
-    0x00000000, // DDRSS_PI_262_VAL
-    0x00000120, // DDRSS_PI_263_VAL
-    0x000890B8, // DDRSS_PI_264_VAL
-    0x00000000, // DDRSS_PI_265_VAL
-    0x00000000, // DDRSS_PI_266_VAL
-    0x00000000, // DDRSS_PI_267_VAL
-    0x00000120, // DDRSS_PI_268_VAL
-    0x000890B8, // DDRSS_PI_269_VAL
-    0x00000000, // DDRSS_PI_270_VAL
-    0x00000000, // DDRSS_PI_271_VAL
-    0x00000000, // DDRSS_PI_272_VAL
-    0x02000120, // DDRSS_PI_273_VAL
-    0x00000080, // DDRSS_PI_274_VAL
-    0x00020000, // DDRSS_PI_275_VAL
-    0x00000080, // DDRSS_PI_276_VAL
-    0x00020000, // DDRSS_PI_277_VAL
-    0x00000080, // DDRSS_PI_278_VAL
-    0x00000000, // DDRSS_PI_279_VAL
-    0x00000000, // DDRSS_PI_280_VAL
-    0x00040404, // DDRSS_PI_281_VAL
-    0x00000000, // DDRSS_PI_282_VAL
-    0x02010102, // DDRSS_PI_283_VAL
-    0x67676767, // DDRSS_PI_284_VAL
-    0x00000202, // DDRSS_PI_285_VAL
-    0x00000000, // DDRSS_PI_286_VAL
-    0x00000000, // DDRSS_PI_287_VAL
-    0x00000000, // DDRSS_PI_288_VAL
-    0x00000000, // DDRSS_PI_289_VAL
-    0x00000000, // DDRSS_PI_290_VAL
-    0x0D100F00, // DDRSS_PI_291_VAL
-    0x0003020E, // DDRSS_PI_292_VAL
-    0x00000001, // DDRSS_PI_293_VAL
-    0x01000000, // DDRSS_PI_294_VAL
-    0x00020201, // DDRSS_PI_295_VAL
-    0x00000000, // DDRSS_PI_296_VAL
-    0x00000424,//7
-    0x00000301,//8
-    0x00000000,//9
-    0x00000000,//300
-    0x00000000,//1
-    0x00001401,//2
-    0x00000493,//3
-    0x00000000,//4
-    0x00000424,//5
-    0x00000301,//6
-    0x00000000,//7
-    0x00000000,//8
-    0x00000000,//9
-    0x00001401,//310
-    0x00000493,//1
-    0x00000000,//2
-    0x00000424,//3
-    0x00000301,//4
-    0x00000000,//5
-    0x00000000,//6
-    0x00000000,//7
-    0x00001401,//8
-    0x00000493,//9
-    0x00000000,//320
-    0x00000424,//1
-    0x00000301,//2
-    0x00000000,//3
-    0x00000000,//4
-    0x00000000,//5
-    0x00001401,//6
-    0x00000493,//7
-    0x00000000,//8
-    0x00000424,//9
-    0x00000301,//330
-    0x00000000,//1
-    0x00000000,//2
-    0x00000000,//3
-    0x00001401,//4
-    0x00000493,//5
-    0x00000000,//6
-    0x00000424,//7
-    0x00000301,//8
-    0x00000000,//9
-    0x00000000,//340
-    0x00000000,//1
-    0x00001401,//2
-    0x00000493,//2
-    0x00000000,//4
+                                0x00000A00,
+                                0x00000000,
+                                0x00000000,
+                                0x01000000,
+                                0x00000001,
+                                0x00010064,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00010001,
+                                0x00000000,
+                                0x00010001,
+                                0x00000005,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x280D0001,
+                                0x00000000,
+                                0x00010000,
+                                0x00003200,
+                                0x00000000,
+                                0x00000000,
+                                0x00060602,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000001,
+                                0x00000055,
+                                0x000000AA,
+                                0x000000AD,
+                                0x00000052,
+                                0x0000006A,
+                                0x00000095,
+                                0x00000095,
+                                0x000000AD,
+                                0x00000000,
+                                0x00000000,
+                                0x00010100,
+                                0x00000014,
+                                0x000007D0,
+                                0x00000300,
+                                0x00000000,
+                                0x00000000,
+                                0x01000000,
+                                0x00010101,
+                                0x01000000,
+                                0x00000000,
+                                0x00010000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001400,
+                                0x00000000,
+                                0x01000000,
+                                0x00000404,
+                                0x00000001,
+                                0x0001010E,
+                                0x02040100,
+                                0x00010000,
+                                0x00000034,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000005,
+                                0x01000000,
+                                0x04000100,
+                                0x00020000,
+                                0x00010002,
+                                0x00000001,
+                                0x00020001,
+                                0x00020002,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000300,
+                                0x0A090B0C,
+                                0x04060708,
+                                0x01000005,
+                                0x00000800,
+                                0x00000000,
+                                0x00010008,
+                                0x00000000,
+                                0x0000AA00,
+                                0x00000000,
+                                0x00010000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000008,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00010100,
+                                0x00000000,
+                                0x00000000,
+                                0x00027100,
+                                0x00061A80,
+                                0x00000100,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x01000000,
+                                0x00010003,
+                                0x02000101,
+                                0x01030001,
+                                0x00010400,
+                                0x06000105,
+                                0x01070001,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00010000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00010000,
+                                0x00000004,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00007800,
+                                0x00780078,
+                                0x00141414,
+                                0x0000003A,
+                                0x0000003A,
+                                0x0004003A,
+                                0x04000400,
+                                0x68040009,
+                                0x0400091C,
+                                0x00091C68,
+                                0x001C6804,
+                                0x00000118,
+                                0x00001860,
+                                0x00000118,
+                                0x00001860,
+                                0x00000118,
+                                0x04001860,
+                                0x01010404,
+                                0x00001901,
+                                0x00190019,
+                                0x010C010C,
+                                0x0000010C,
+                                0x00000000,
+                                0x05000000,
+                                0x01010505,
+                                0x01010101,
+                                0x00181818,
+                                0x00000000,
+                                0x00000000,
+                                0x0D000000,
+                                0x0A0A0D0D,
+                                0x0303030A,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x0D090000,
+                                0x0D09000D,
+                                0x0D09000D,
+                                0x0000000D,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x16000000,
+                                0x001600C8,
+                                0x001600C8,
+                                0x010100C8,
+                                0x00001B01,
+                                0x1F0F0053,
+                                0x05000001,
+                                0x001B0A0D,
+                                0x1F0F0053,
+                                0x05000001,
+                                0x001B0A0D,
+                                0x1F0F0053,
+                                0x05000001,
+                                0x00010A0D,
+                                0x0D0C0700,
+                                0x000D0605,
+                                0x0000C570,
+                                0x0000001D,
+                                0x180A0800,
+                                0x0C071C1C,
+                                0x0D06050D,
+                                0x0000C570,
+                                0x0000001D,
+                                0x180A0800,
+                                0x0C071C1C,
+                                0x0D06050D,
+                                0x0000C570,
+                                0x0000001D,
+                                0x180A0800,
+                                0x00001C1C,
+                                0x000030C0,
+                                0x0001E780,
+                                0x000030C0,
+                                0x0001E780,
+                                0x000030C0,
+                                0x0001E780,
+                                0x02550255,
+                                0x03030255,
+                                0x00025503,
+                                0x02550255,
+                                0x0C080C08,
+                                0x00000C08,
+                                0x000890B8,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000120,
+                                0x000890B8,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000120,
+                                0x000890B8,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x02000120,
+                                0x00000080,
+                                0x00020000,
+                                0x00000080,
+                                0x00020000,
+                                0x00000080,
+                                0x00000000,
+                                0x00000000,
+                                0x00040404,
+                                0x00000000,
+                                0x02010102,
+                                0x67676767,
+                                0x00000202,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x0D100F00,
+                                0x0003020E,
+                                0x00000001,
+                                0x01000000,
+                                0x00020201,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
+                                0x00000424,
+                                0x00000301,
+                                0x00000000,
+                                0x00000000,
+                                0x00000000,
+                                0x00001401,
+                                0x00000493,
+                                0x00000000,
 };
 
 uint32_t DDRSS_phyReg[] = {
-    0x04C00000, // DDRSS_PHY_0_VAL
-    0x00000000, // DDRSS_PHY_1_VAL
-    0x00000200, // DDRSS_PHY_2_VAL
-    0x00000000, // DDRSS_PHY_3_VAL
-    0x00000000, // DDRSS_PHY_4_VAL
-    0x00000000, // DDRSS_PHY_5_VAL
-    0x00000000, // DDRSS_PHY_6_VAL
-    0x00000000, // DDRSS_PHY_7_VAL
-    0x00000001, // DDRSS_PHY_8_VAL
-    0x00000000, // DDRSS_PHY_9_VAL
-    0x00000000, // DDRSS_PHY_10_VAL
-    0x010101FF, // DDRSS_PHY_11_VAL
-    0x00010000, // DDRSS_PHY_12_VAL
-    0x00C00004, // DDRSS_PHY_13_VAL
-    0x00CC0008, // DDRSS_PHY_14_VAL
-    0x00660201, // DDRSS_PHY_15_VAL
-    0x00000000, // DDRSS_PHY_16_VAL
-    0x00000000, // DDRSS_PHY_17_VAL
-    0x00000000, // DDRSS_PHY_18_VAL
-    0x0000AAAA, // DDRSS_PHY_19_VAL
-    0x00005555, // DDRSS_PHY_20_VAL
-    0x0000B5B5, // DDRSS_PHY_21_VAL
-    0x00004A4A, // DDRSS_PHY_22_VAL
-    0x00005656, // DDRSS_PHY_23_VAL
-    0x0000A9A9, // DDRSS_PHY_24_VAL
-    0x0000B7B7, // DDRSS_PHY_25_VAL
-    0x00004848, // DDRSS_PHY_26_VAL
-    0x00000000, // DDRSS_PHY_27_VAL
-    0x00000000, // DDRSS_PHY_28_VAL
-    0x08000000, // DDRSS_PHY_29_VAL
-    0x0F000008, // DDRSS_PHY_30_VAL
-    0x00000F0F, // DDRSS_PHY_31_VAL
-    0x00E4E400, // DDRSS_PHY_32_VAL
-    0x00070820, // DDRSS_PHY_33_VAL
-    0x000C0020, // DDRSS_PHY_34_VAL
-    0x00062000, // DDRSS_PHY_35_VAL
-    0x00000000, // DDRSS_PHY_36_VAL
-    0x55555555, // DDRSS_PHY_37_VAL
-    0xAAAAAAAA, // DDRSS_PHY_38_VAL
-    0x55555555, // DDRSS_PHY_39_VAL
-    0xAAAAAAAA, // DDRSS_PHY_40_VAL
-    0x00005555, // DDRSS_PHY_41_VAL
-    0x01000100, // DDRSS_PHY_42_VAL
-    0x00800180, // DDRSS_PHY_43_VAL
-    0x00000000, // DDRSS_PHY_44_VAL
-    0x00000000, // DDRSS_PHY_45_VAL
-    0x00000000, // DDRSS_PHY_46_VAL
-    0x00000000, // DDRSS_PHY_47_VAL
-    0x00000000, // DDRSS_PHY_48_VAL
-    0x00000000, // DDRSS_PHY_49_VAL
-    0x00000000, // DDRSS_PHY_50_VAL
-    0x00000000, // DDRSS_PHY_51_VAL
-    0x00000000, // DDRSS_PHY_52_VAL
-    0x00000000, // DDRSS_PHY_53_VAL
-    0x00000000, // DDRSS_PHY_54_VAL
-    0x00000000, // DDRSS_PHY_55_VAL
-    0x00000000, // DDRSS_PHY_56_VAL
-    0x00000000, // DDRSS_PHY_57_VAL
-    0x00000000, // DDRSS_PHY_58_VAL
-    0x00000000, // DDRSS_PHY_59_VAL
-    0x00000000, // DDRSS_PHY_60_VAL
-    0x00000000, // DDRSS_PHY_61_VAL
-    0x00000000, // DDRSS_PHY_62_VAL
-    0x00000000, // DDRSS_PHY_63_VAL
-    0x00000000, // DDRSS_PHY_64_VAL
-    0x00000004, // DDRSS_PHY_65_VAL
-    0x00000000, // DDRSS_PHY_66_VAL
-    0x00000000, // DDRSS_PHY_67_VAL
-    0x00000000, // DDRSS_PHY_68_VAL
-    0x00000000, // DDRSS_PHY_69_VAL
-    0x00000000, // DDRSS_PHY_70_VAL
-    0x00000000, // DDRSS_PHY_71_VAL
-    0x041F07FF, // DDRSS_PHY_72_VAL
-    0x00000000, // DDRSS_PHY_73_VAL
-    0x01CCB001, // DDRSS_PHY_74_VAL
-    0x2000CCB0, // DDRSS_PHY_75_VAL
-    0x20000140, // DDRSS_PHY_76_VAL
-    0x07FF0200, // DDRSS_PHY_77_VAL
-    0x0000DD01, // DDRSS_PHY_78_VAL
-    0x10100303, // DDRSS_PHY_79_VAL
-    0x10101010, // DDRSS_PHY_80_VAL
-    0x10101010, // DDRSS_PHY_81_VAL
-    0x00021010, // DDRSS_PHY_82_VAL
-    0x00100010, // DDRSS_PHY_83_VAL
-    0x00100010, // DDRSS_PHY_84_VAL
-    0x00100010, // DDRSS_PHY_85_VAL
-    0x00100010, // DDRSS_PHY_86_VAL
-    0x02020010, // DDRSS_PHY_87_VAL
-    0x51515041, // DDRSS_PHY_88_VAL
-    0x31804000, // DDRSS_PHY_89_VAL
-    0x04BF0340, // DDRSS_PHY_90_VAL
-    0x01008080, // DDRSS_PHY_91_VAL
-    0x04050001,//2
-    0x00000504, // DDRSS_PHY_93_VAL
-    0x42100010, // DDRSS_PHY_94_VAL
-    0x010C053E, // DDRSS_PHY_95_VAL
-    0x000F0C14, // DDRSS_PHY_96_VAL
-    0x01000140, // DDRSS_PHY_97_VAL
-    0x007A0120, // DDRSS_PHY_98_VAL
-    0x00000C00, // DDRSS_PHY_99_VAL
-    0x000001CC, // DDRSS_PHY_100_VAL
-    0x20100200, // DDRSS_PHY_101_VAL
-    0x00000005, // DDRSS_PHY_102_VAL
-    0x76543210, // DDRSS_PHY_103_VAL
-    0x00000008, // DDRSS_PHY_104_VAL
-    0x02800280, // DDRSS_PHY_105_VAL
-    0x02800280, // DDRSS_PHY_106_VAL
-    0x02800280, // DDRSS_PHY_107_VAL
-    0x02800280, // DDRSS_PHY_108_VAL
-    0x00000280, // DDRSS_PHY_109_VAL
-    0x00008000, // DDRSS_PHY_110_VAL
-    0x00800080, // DDRSS_PHY_111_VAL
-    0x00800080, // DDRSS_PHY_112_VAL
-    0x00800080, // DDRSS_PHY_113_VAL
-    0x00800080, // DDRSS_PHY_114_VAL
-    0x00800080, // DDRSS_PHY_115_VAL
-    0x00800080, // DDRSS_PHY_116_VAL
-    0x00800080, // DDRSS_PHY_117_VAL
-    0x00800080, // DDRSS_PHY_118_VAL
-    0x01000080, // DDRSS_PHY_119_VAL
-    0x01A00000, // DDRSS_PHY_120_VAL
-    0x00000000, // DDRSS_PHY_121_VAL
-    0x00000000, // DDRSS_PHY_122_VAL
-    0x00080200, // DDRSS_PHY_123_VAL
-    0x00000000, // DDRSS_PHY_124_VAL
-    0x00000000, // DDRSS_PHY_125_VAL
-    0x04C00000, // DDRSS_PHY_256_VAL
-    0x00000000, // DDRSS_PHY_257_VAL
-    0x00000200, // DDRSS_PHY_258_VAL
-    0x00000000, // DDRSS_PHY_259_VAL
-    0x00000000, // DDRSS_PHY_260_VAL
-    0x00000000, // DDRSS_PHY_261_VAL
-    0x00000000, // DDRSS_PHY_262_VAL
-    0x00000000, // DDRSS_PHY_263_VAL
-    0x00000001, // DDRSS_PHY_264_VAL
-    0x00000000, // DDRSS_PHY_265_VAL
-    0x00000000, // DDRSS_PHY_266_VAL
-    0x010101FF, // DDRSS_PHY_267_VAL
-    0x00010000, // DDRSS_PHY_268_VAL
-    0x00C00004, // DDRSS_PHY_269_VAL
-    0x00CC0008, // DDRSS_PHY_270_VAL
-    0x00660201, // DDRSS_PHY_271_VAL
-    0x00000000, // DDRSS_PHY_272_VAL
-    0x00000000, // DDRSS_PHY_273_VAL
-    0x00000000, // DDRSS_PHY_274_VAL
-    0x0000AAAA, // DDRSS_PHY_275_VAL
-    0x00005555, // DDRSS_PHY_276_VAL
-    0x0000B5B5, // DDRSS_PHY_277_VAL
-    0x00004A4A, // DDRSS_PHY_278_VAL
-    0x00005656, // DDRSS_PHY_279_VAL
-    0x0000A9A9, // DDRSS_PHY_280_VAL
-    0x0000B7B7, // DDRSS_PHY_281_VAL
-    0x00004848, // DDRSS_PHY_282_VAL
-    0x00000000, // DDRSS_PHY_283_VAL
-    0x00000000, // DDRSS_PHY_284_VAL
-    0x08000000, // DDRSS_PHY_285_VAL
-    0x0F000008, // DDRSS_PHY_286_VAL
-    0x00000F0F, // DDRSS_PHY_287_VAL
-    0x00E4E400, // DDRSS_PHY_288_VAL
-    0x00070820, // DDRSS_PHY_289_VAL
-    0x000C0020, // DDRSS_PHY_290_VAL
-    0x00062000, // DDRSS_PHY_291_VAL
-    0x00000000, // DDRSS_PHY_292_VAL
-    0x55555555, // DDRSS_PHY_293_VAL
-    0xAAAAAAAA, // DDRSS_PHY_294_VAL
-    0x55555555, // DDRSS_PHY_295_VAL
-    0xAAAAAAAA, // DDRSS_PHY_296_VAL
-    0x00005555, // DDRSS_PHY_297_VAL
-    0x01000100, // DDRSS_PHY_298_VAL
-    0x00800180, // DDRSS_PHY_299_VAL
-    0x00000000, // DDRSS_PHY_300_VAL
-    0x00000000, // DDRSS_PHY_301_VAL
-    0x00000000, // DDRSS_PHY_302_VAL
-    0x00000000, // DDRSS_PHY_303_VAL
-    0x00000000, // DDRSS_PHY_304_VAL
-    0x00000000, // DDRSS_PHY_305_VAL
-    0x00000000, // DDRSS_PHY_306_VAL
-    0x00000000, // DDRSS_PHY_307_VAL
-    0x00000000, // DDRSS_PHY_308_VAL
-    0x00000000, // DDRSS_PHY_309_VAL
-    0x00000000, // DDRSS_PHY_310_VAL
-    0x00000000, // DDRSS_PHY_311_VAL
-    0x00000000, // DDRSS_PHY_312_VAL
-    0x00000000, // DDRSS_PHY_313_VAL
-    0x00000000, // DDRSS_PHY_314_VAL
-    0x00000000, // DDRSS_PHY_315_VAL
-    0x00000000, // DDRSS_PHY_316_VAL
-    0x00000000, // DDRSS_PHY_317_VAL
-    0x00000000, // DDRSS_PHY_318_VAL
-    0x00000000, // DDRSS_PHY_319_VAL
-    0x00000000, // DDRSS_PHY_320_VAL
-    0x00000004, // DDRSS_PHY_321_VAL
-    0x00000000, // DDRSS_PHY_322_VAL
-    0x00000000, // DDRSS_PHY_323_VAL
-    0x00000000, // DDRSS_PHY_324_VAL
-    0x00000000, // DDRSS_PHY_325_VAL
-    0x00000000, // DDRSS_PHY_326_VAL
-    0x00000000, // DDRSS_PHY_327_VAL
-    0x041F07FF, // DDRSS_PHY_328_VAL
-    0x00000000, // DDRSS_PHY_329_VAL
-    0x01CCB001, // DDRSS_PHY_330_VAL
-    0x2000CCB0, // DDRSS_PHY_331_VAL
-    0x20000140, // DDRSS_PHY_332_VAL
-    0x07FF0200, // DDRSS_PHY_333_VAL
-    0x0000DD01, // DDRSS_PHY_334_VAL
-    0x10100303, // DDRSS_PHY_335_VAL
-    0x10101010, // DDRSS_PHY_336_VAL
-    0x10101010, // DDRSS_PHY_337_VAL
-    0x00021010, // DDRSS_PHY_338_VAL
-    0x00100010, // DDRSS_PHY_339_VAL
-    0x00100010, // DDRSS_PHY_340_VAL
-    0x00100010, // DDRSS_PHY_341_VAL
-    0x00100010, // DDRSS_PHY_342_VAL
-    0x02020010, // DDRSS_PHY_343_VAL
-    0x51515041, // DDRSS_PHY_344_VAL
-    0x31804000, // DDRSS_PHY_345_VAL
-    0x04BF0340, // DDRSS_PHY_346_VAL
-    0x01008080, // DDRSS_PHY_347_VAL
-    0x04050001,//8
-    0x00000504, // DDRSS_PHY_349_VAL
-    0x42100010, // DDRSS_PHY_350_VAL
-    0x010C053E, // DDRSS_PHY_351_VAL
-    0x000F0C14, // DDRSS_PHY_352_VAL
-    0x01000140, // DDRSS_PHY_353_VAL
-    0x007A0120, // DDRSS_PHY_354_VAL
-    0x00000C00, // DDRSS_PHY_355_VAL
-    0x000001CC, // DDRSS_PHY_356_VAL
-    0x20100200, // DDRSS_PHY_357_VAL
-    0x00000005, // DDRSS_PHY_358_VAL
-    0x76543210, // DDRSS_PHY_359_VAL
-    0x00000008, // DDRSS_PHY_360_VAL
-    0x02800280, // DDRSS_PHY_361_VAL
-    0x02800280, // DDRSS_PHY_362_VAL
-    0x02800280, // DDRSS_PHY_363_VAL
-    0x02800280, // DDRSS_PHY_364_VAL
-    0x00000280, // DDRSS_PHY_365_VAL
-    0x00008000, // DDRSS_PHY_366_VAL
-    0x00800080, // DDRSS_PHY_367_VAL
-    0x00800080, // DDRSS_PHY_368_VAL
-    0x00800080, // DDRSS_PHY_369_VAL
-    0x00800080, // DDRSS_PHY_370_VAL
-    0x00800080, // DDRSS_PHY_371_VAL
-    0x00800080, // DDRSS_PHY_372_VAL
-    0x00800080, // DDRSS_PHY_373_VAL
-    0x00800080, // DDRSS_PHY_374_VAL
-    0x01000080, // DDRSS_PHY_375_VAL
-    0x01A00000, // DDRSS_PHY_376_VAL
-    0x00000000, // DDRSS_PHY_377_VAL
-    0x00000000, // DDRSS_PHY_378_VAL
-    0x00080200, // DDRSS_PHY_379_VAL
-    0x00000000, // DDRSS_PHY_380_VAL
-    0x00000000, // DDRSS_PHY_381_VAL
-    0x00000100, // DDRSS_PHY_512_VAL
-    0x00000000, // DDRSS_PHY_513_VAL
-    0x00000000, // DDRSS_PHY_514_VAL
-    0x00000000, // DDRSS_PHY_515_VAL
-    0x00000000, // DDRSS_PHY_516_VAL
-    0x00000100, // DDRSS_PHY_517_VAL
-    0x00000000, // DDRSS_PHY_518_VAL
-    0x00000000, // DDRSS_PHY_519_VAL
-    0x00000000, // DDRSS_PHY_520_VAL
-    0x00000000, // DDRSS_PHY_521_VAL
-    0x00000000, // DDRSS_PHY_522_VAL
-    0x00000000, // DDRSS_PHY_523_VAL
-    0x00000000, // DDRSS_PHY_524_VAL
-    0x00DCBA98, // DDRSS_PHY_525_VAL
-    0x00000000, // DDRSS_PHY_526_VAL
-    0x00000000, // DDRSS_PHY_527_VAL
-    0x00000000, // DDRSS_PHY_528_VAL
-    0x00000000, // DDRSS_PHY_529_VAL
-    0x00000000, // DDRSS_PHY_530_VAL
-    0x00000000, // DDRSS_PHY_531_VAL
-    0x00000000, // DDRSS_PHY_532_VAL
-    0x00000000, // DDRSS_PHY_533_VAL
-    0x00000000, // DDRSS_PHY_534_VAL
-    0x00000000, // DDRSS_PHY_535_VAL
-    0x00000000, // DDRSS_PHY_536_VAL
-    0x00000000, // DDRSS_PHY_537_VAL
-    0x00000000, // DDRSS_PHY_538_VAL
-    0x00000000, // DDRSS_PHY_539_VAL
-    0x0A418820, // DDRSS_PHY_540_VAL
-    0x103F0000, // DDRSS_PHY_541_VAL
-    0x000F0100, // DDRSS_PHY_542_VAL
-    0x0000000F, // DDRSS_PHY_543_VAL
-    0x020002CC, // DDRSS_PHY_544_VAL
-    0x00030000, // DDRSS_PHY_545_VAL
-    0x00000300, // DDRSS_PHY_546_VAL
-    0x00000300, // DDRSS_PHY_547_VAL
-    0x00000300, // DDRSS_PHY_548_VAL
-    0x00000300, // DDRSS_PHY_549_VAL
-    0x00000300, // DDRSS_PHY_550_VAL
-    0x42080010, // DDRSS_PHY_551_VAL
-    0x0000003E, // DDRSS_PHY_552_VAL
-    0x00000000, // DDRSS_PHY_553_VAL
-    0x00000000, // DDRSS_PHY_554_VAL
-    0x00000100, // DDRSS_PHY_768_VAL
-    0x00000000, // DDRSS_PHY_769_VAL
-    0x00000000, // DDRSS_PHY_770_VAL
-    0x00000000, // DDRSS_PHY_771_VAL
-    0x00000000, // DDRSS_PHY_772_VAL
-    0x00000100, // DDRSS_PHY_773_VAL
-    0x00000000, // DDRSS_PHY_774_VAL
-    0x00000000, // DDRSS_PHY_775_VAL
-    0x00000000, // DDRSS_PHY_776_VAL
-    0x00000000, // DDRSS_PHY_777_VAL
-    0x00000000, // DDRSS_PHY_778_VAL
-    0x00000000, // DDRSS_PHY_779_VAL
-    0x00000000, // DDRSS_PHY_780_VAL
-    0x00DCBA98, // DDRSS_PHY_781_VAL
-    0x00000000, // DDRSS_PHY_782_VAL
-    0x00000000, // DDRSS_PHY_783_VAL
-    0x00000000, // DDRSS_PHY_784_VAL
-    0x00000000, // DDRSS_PHY_785_VAL
-    0x00000000, // DDRSS_PHY_786_VAL
-    0x00000000, // DDRSS_PHY_787_VAL
-    0x00000000, // DDRSS_PHY_788_VAL
-    0x00000000, // DDRSS_PHY_789_VAL
-    0x00000000, // DDRSS_PHY_790_VAL
-    0x00000000, // DDRSS_PHY_791_VAL
-    0x00000000, // DDRSS_PHY_792_VAL
-    0x00000000, // DDRSS_PHY_793_VAL
-    0x00000000, // DDRSS_PHY_794_VAL
-    0x00000000, // DDRSS_PHY_795_VAL
-    0x16A4A0E6, // DDRSS_PHY_796_VAL
-    0x103F0000, // DDRSS_PHY_797_VAL
-    0x000F0000, // DDRSS_PHY_798_VAL
-    0x0000000F, // DDRSS_PHY_799_VAL
-    0x020002CC, // DDRSS_PHY_800_VAL
-    0x00030000, // DDRSS_PHY_801_VAL
-    0x00000300, // DDRSS_PHY_802_VAL
-    0x00000300, // DDRSS_PHY_803_VAL
-    0x00000300, // DDRSS_PHY_804_VAL
-    0x00000300, // DDRSS_PHY_805_VAL
-    0x00000300, // DDRSS_PHY_806_VAL
-    0x42080010, // DDRSS_PHY_807_VAL
-    0x0000003E, // DDRSS_PHY_808_VAL
-    0x00000000, // DDRSS_PHY_809_VAL
-    0x00000000, // DDRSS_PHY_810_VAL
-    0x00000100, // DDRSS_PHY_1024_VAL
-    0x00000000, // DDRSS_PHY_1025_VAL
-    0x00000000, // DDRSS_PHY_1026_VAL
-    0x00000000, // DDRSS_PHY_1027_VAL
-    0x00000000, // DDRSS_PHY_1028_VAL
-    0x00000100, // DDRSS_PHY_1029_VAL
-    0x00000000, // DDRSS_PHY_1030_VAL
-    0x00000000, // DDRSS_PHY_1031_VAL
-    0x00000000, // DDRSS_PHY_1032_VAL
-    0x00000000, // DDRSS_PHY_1033_VAL
-    0x00000000, // DDRSS_PHY_1034_VAL
-    0x00000000, // DDRSS_PHY_1035_VAL
-    0x00000000, // DDRSS_PHY_1036_VAL
-    0x00DCBA98, // DDRSS_PHY_1037_VAL
-    0x00000000, // DDRSS_PHY_1038_VAL
-    0x00000000, // DDRSS_PHY_1039_VAL
-    0x00000000, // DDRSS_PHY_1040_VAL
-    0x00000000, // DDRSS_PHY_1041_VAL
-    0x00000000, // DDRSS_PHY_1042_VAL
-    0x00000000, // DDRSS_PHY_1043_VAL
-    0x00000000, // DDRSS_PHY_1044_VAL
-    0x00000000, // DDRSS_PHY_1045_VAL
-    0x00000000, // DDRSS_PHY_1046_VAL
-    0x00000000, // DDRSS_PHY_1047_VAL
-    0x00000000, // DDRSS_PHY_1048_VAL
-    0x00000000, // DDRSS_PHY_1049_VAL
-    0x00000000, // DDRSS_PHY_1050_VAL
-    0x00000000, // DDRSS_PHY_1051_VAL
-    0x2307B9AC, // DDRSS_PHY_1052_VAL
-    0x10030000, // DDRSS_PHY_1053_VAL
-    0x000F0000, // DDRSS_PHY_1054_VAL
-    0x0000000F, // DDRSS_PHY_1055_VAL
-    0x020002CC, // DDRSS_PHY_1056_VAL
-    0x00030000, // DDRSS_PHY_1057_VAL
-    0x00000300, // DDRSS_PHY_1058_VAL
-    0x00000300, // DDRSS_PHY_1059_VAL
-    0x00000300, // DDRSS_PHY_1060_VAL
-    0x00000300, // DDRSS_PHY_1061_VAL
-    0x00000300, // DDRSS_PHY_1062_VAL
-    0x42080010, // DDRSS_PHY_1063_VAL
-    0x0000003E, // DDRSS_PHY_1064_VAL
-    0x00000000, // DDRSS_PHY_1065_VAL
-    0x00000000, // DDRSS_PHY_1066_VAL
-    0x00000000, // DDRSS_PHY_1280_VAL
-    0x00000100, // DDRSS_PHY_1281_VAL
-    0x00000000, // DDRSS_PHY_1282_VAL
-    0x00000000, // DDRSS_PHY_1283_VAL
-    0x00000000, // DDRSS_PHY_1284_VAL
-    0x00000000, // DDRSS_PHY_1285_VAL
-    0x00050000, // DDRSS_PHY_1286_VAL
-    0x04000100, // DDRSS_PHY_1287_VAL
-    0x00000055, // DDRSS_PHY_1288_VAL
-    0x00000000, // DDRSS_PHY_1289_VAL
-    0x00000000, // DDRSS_PHY_1290_VAL
-    0x00000000, // DDRSS_PHY_1291_VAL
-    0x00000000, // DDRSS_PHY_1292_VAL
-    0x01002000, // DDRSS_PHY_1293_VAL
-    0x00004001, // DDRSS_PHY_1294_VAL
-    0x00020028, // DDRSS_PHY_1295_VAL
-    0x00010100, // DDRSS_PHY_1296_VAL
-    0x00000001, // DDRSS_PHY_1297_VAL
-    0x00000000, // DDRSS_PHY_1298_VAL
-    0x0F0F0E06, // DDRSS_PHY_1299_VAL
-    0x00010101, // DDRSS_PHY_1300_VAL
-    0x010F0004, // DDRSS_PHY_1301_VAL
-    0x00000000, // DDRSS_PHY_1302_VAL
-    0x00000000, // DDRSS_PHY_1303_VAL
-    0x00000064, // DDRSS_PHY_1304_VAL
-    0x00000000, // DDRSS_PHY_1305_VAL
-    0x00000000, // DDRSS_PHY_1306_VAL
-    0x01020103, // DDRSS_PHY_1307_VAL
-    0x0F020102, // DDRSS_PHY_1308_VAL
-    0x03030303, // DDRSS_PHY_1309_VAL
-    0x03030303, // DDRSS_PHY_1310_VAL
-    0x00040000, // DDRSS_PHY_1311_VAL
-    0x00005201, // DDRSS_PHY_1312_VAL
-    0x00000000, // DDRSS_PHY_1313_VAL
-    0x00000000, // DDRSS_PHY_1314_VAL
-    0x00000000, // DDRSS_PHY_1315_VAL
-    0x00000000, // DDRSS_PHY_1316_VAL
-    0x00000000, // DDRSS_PHY_1317_VAL
-    0x00000000, // DDRSS_PHY_1318_VAL
-    0x07070001, // DDRSS_PHY_1319_VAL
-    0x00005400, // DDRSS_PHY_1320_VAL
-    0x000040A2, // DDRSS_PHY_1321_VAL
-    0x00024410, // DDRSS_PHY_1322_VAL
-    0x00004410, // DDRSS_PHY_1323_VAL
-    0x00004410, // DDRSS_PHY_1324_VAL
-    0x00004410, // DDRSS_PHY_1325_VAL
-    0x00004410, // DDRSS_PHY_1326_VAL
-    0x00004410, // DDRSS_PHY_1327_VAL
-    0x00004410, // DDRSS_PHY_1328_VAL
-    0x00004410, // DDRSS_PHY_1329_VAL
-    0x00004410, // DDRSS_PHY_1330_VAL
-    0x00004410, // DDRSS_PHY_1331_VAL
-    0x00000000, // DDRSS_PHY_1332_VAL
-    0x00000046, // DDRSS_PHY_1333_VAL
-    0x00010000, // DDRSS_PHY_1334_VAL
-    0x00000008, // DDRSS_PHY_1335_VAL
-    0x00000000, // DDRSS_PHY_1336_VAL
-    0x00000000, // DDRSS_PHY_1337_VAL
-    0x00000000, // DDRSS_PHY_1338_VAL
-    0x00000000, // DDRSS_PHY_1339_VAL
-    0x00000000, // DDRSS_PHY_1340_VAL
-    0x03000000, // DDRSS_PHY_1341_VAL
-    0x00000000, // DDRSS_PHY_1342_VAL
-    0x00000000, // DDRSS_PHY_1343_VAL
-    0x00000000, // DDRSS_PHY_1344_VAL
-    0x04102006, // DDRSS_PHY_1345_VAL
-    0x00041020, // DDRSS_PHY_1346_VAL
-    0x01C98C98, // DDRSS_PHY_1347_VAL
-    0x3F400000, // DDRSS_PHY_1348_VAL
-    0x3F3F1F3F, // DDRSS_PHY_1349_VAL
-    0x0000001F, // DDRSS_PHY_1350_VAL
-    0x00000000, // DDRSS_PHY_1351_VAL
-    0x00000000, // DDRSS_PHY_1352_VAL
-    0x00000000, // DDRSS_PHY_1353_VAL
-    0x00000001, // DDRSS_PHY_1354_VAL
-    0x00000000, // DDRSS_PHY_1355_VAL
-    0x00000000, // DDRSS_PHY_1356_VAL
-    0x00000000, // DDRSS_PHY_1357_VAL
-    0x00000000, // DDRSS_PHY_1358_VAL
-    0x76543210, // DDRSS_PHY_1359_VAL
-    0x00000098, // DDRSS_PHY_1360_VAL
-    0x00000000, // DDRSS_PHY_1361_VAL
-    0x00000000, // DDRSS_PHY_1362_VAL
-    0x00000000, // DDRSS_PHY_1363_VAL
-    0x00040700, // DDRSS_PHY_1364_VAL
-    0x00000000, // DDRSS_PHY_1365_VAL
-    0x00000000, // DDRSS_PHY_1366_VAL
-    0x00000000, // DDRSS_PHY_1367_VAL
-    0x00000002, // DDRSS_PHY_1368_VAL
-    0x00000100, // DDRSS_PHY_1369_VAL
-    0x00000000, // DDRSS_PHY_1370_VAL
-    0x0001F7C0, // DDRSS_PHY_1371_VAL
-    0x00020002, // DDRSS_PHY_1372_VAL
-    0x00000000, // DDRSS_PHY_1373_VAL
-    0x00001142, // DDRSS_PHY_1374_VAL
-    0x03020400, // DDRSS_PHY_1375_VAL
-    0x00000080, // DDRSS_PHY_1376_VAL
-    0x03900390, // DDRSS_PHY_1377_VAL
-    0x03900390, // DDRSS_PHY_1378_VAL
-    0x03900390, // DDRSS_PHY_1379_VAL
-    0x03900390, // DDRSS_PHY_1380_VAL
-    0x03900390, // DDRSS_PHY_1381_VAL
-    0x03900390, // DDRSS_PHY_1382_VAL
-    0x00000300, // DDRSS_PHY_1383_VAL
-    0x00000300, // DDRSS_PHY_1384_VAL
-    0x00000300, // DDRSS_PHY_1385_VAL
-    0x00000300, // DDRSS_PHY_1386_VAL
-    0x31823FC7, // DDRSS_PHY_1387_VAL
-    0x00000000, // DDRSS_PHY_1388_VAL
-    0x0C000D3F, // DDRSS_PHY_1389_VAL
-    0x30000D3F, // DDRSS_PHY_1390_VAL
-    0x300D3F11, // DDRSS_PHY_1391_VAL
-    0x01990000, // DDRSS_PHY_1392_VAL
-    0x000D3FCC, // DDRSS_PHY_1393_VAL
-    0x00000C11, // DDRSS_PHY_1394_VAL
-    0x300D3F11, // DDRSS_PHY_1395_VAL
-    0x01990000, // DDRSS_PHY_1396_VAL
-    0x300C3F11, // DDRSS_PHY_1397_VAL
-    0x01990000, // DDRSS_PHY_1398_VAL
-    0x300C3F11, // DDRSS_PHY_1399_VAL
-    0x01990000, // DDRSS_PHY_1400_VAL
-    0x300D3F11, // DDRSS_PHY_1401_VAL
-    0x01990000, // DDRSS_PHY_1402_VAL
-    0x300D3F11, // DDRSS_PHY_1403_VAL
-    0x01990000, // DDRSS_PHY_1404_VAL
-    0x20040001, // DDRSS_PHY_1405_VAL
+                           0x04C00000,
+                           0x00000000,
+                           0x00000200,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000001,
+                           0x00000000,
+                           0x00000000,
+                           0x010101FF,
+                           0x00010000,
+                           0x00C00004,
+                           0x00CC0008,
+                           0x00660201,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0000AAAA,
+                           0x00005555,
+                           0x0000B5B5,
+                           0x00004A4A,
+                           0x00005656,
+                           0x0000A9A9,
+                           0x0000B7B7,
+                           0x00004848,
+                           0x00000000,
+                           0x00000000,
+                           0x08000000,
+                           0x0F000008,
+                           0x00000F0F,
+                           0x00E4E400,
+                           0x00070820,
+                           0x000C0020,
+                           0x00062000,
+                           0x00000000,
+                           0x55555555,
+                           0xAAAAAAAA,
+                           0x55555555,
+                           0xAAAAAAAA,
+                           0x00005555,
+                           0x01000100,
+                           0x00800180,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000004,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x041F07FF,
+                           0x00000000,
+                           0x01CCB001,
+                           0x2000CCB0,
+                           0x20000140,
+                           0x07FF0200,
+                           0x0000DD01,
+                           0x10100303,
+                           0x10101010,
+                           0x10101010,
+                           0x00021010,
+                           0x00100010,
+                           0x00100010,
+                           0x00100010,
+                           0x00100010,
+                           0x02020010,
+                           0x51515041,
+                           0x31804000,
+                           0x04BF0340,
+                           0x01008080,
+                           0x04050001,
+                           0x00000504,
+                           0x42100010,
+                           0x010C053E,
+                           0x000F0C14,
+                           0x01000140,
+                           0x007A0120,
+                           0x00000C00,
+                           0x000001CC,
+                           0x20100200,
+                           0x00000005,
+                           0x76543210,
+                           0x00000008,
+                           0x02800280,
+                           0x02800280,
+                           0x02800280,
+                           0x02800280,
+                           0x00000280,
+                           0x00008000,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x01000080,
+                           0x01A00000,
+                           0x00000000,
+                           0x00000000,
+                           0x00080200,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x04C00000,
+                           0x00000000,
+                           0x00000200,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000001,
+                           0x00000000,
+                           0x00000000,
+                           0x010101FF,
+                           0x00010000,
+                           0x00C00004,
+                           0x00CC0008,
+                           0x00660201,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0000AAAA,
+                           0x00005555,
+                           0x0000B5B5,
+                           0x00004A4A,
+                           0x00005656,
+                           0x0000A9A9,
+                           0x0000B7B7,
+                           0x00004848,
+                           0x00000000,
+                           0x00000000,
+                           0x08000000,
+                           0x0F000008,
+                           0x00000F0F,
+                           0x00E4E400,
+                           0x00070820,
+                           0x000C0020,
+                           0x00062000,
+                           0x00000000,
+                           0x55555555,
+                           0xAAAAAAAA,
+                           0x55555555,
+                           0xAAAAAAAA,
+                           0x00005555,
+                           0x01000100,
+                           0x00800180,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000004,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x041F07FF,
+                           0x00000000,
+                           0x01CCB001,
+                           0x2000CCB0,
+                           0x20000140,
+                           0x07FF0200,
+                           0x0000DD01,
+                           0x10100303,
+                           0x10101010,
+                           0x10101010,
+                           0x00021010,
+                           0x00100010,
+                           0x00100010,
+                           0x00100010,
+                           0x00100010,
+                           0x02020010,
+                           0x51515041,
+                           0x31804000,
+                           0x04BF0340,
+                           0x01008080,
+                           0x04050001,
+                           0x00000504,
+                           0x42100010,
+                           0x010C053E,
+                           0x000F0C14,
+                           0x01000140,
+                           0x007A0120,
+                           0x00000C00,
+                           0x000001CC,
+                           0x20100200,
+                           0x00000005,
+                           0x76543210,
+                           0x00000008,
+                           0x02800280,
+                           0x02800280,
+                           0x02800280,
+                           0x02800280,
+                           0x00000280,
+                           0x00008000,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x00800080,
+                           0x01000080,
+                           0x01A00000,
+                           0x00000000,
+                           0x00000000,
+                           0x00080200,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00DCBA98,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x0A418820,
+                           0x103F0000,
+                           0x000F0100,
+                           0x0000000F,
+                           0x020002CC,
+                           0x00030000,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x42080010,
+                           0x0000003E,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00DCBA98,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x16A4A0E6,
+                           0x103F0000,
+                           0x000F0000,
+                           0x0000000F,
+                           0x020002CC,
+                           0x00030000,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x42080010,
+                           0x0000003E,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00DCBA98,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x2307B9AC,
+                           0x10030000,
+                           0x000F0000,
+                           0x0000000F,
+                           0x020002CC,
+                           0x00030000,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x42080010,
+                           0x0000003E,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000100,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00050000,
+                           0x04000100,
+                           0x00000055,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x01002000,
+                           0x00004001,
+                           0x00020028,
+                           0x00010100,
+                           0x00000001,
+                           0x00000000,
+                           0x0F0F0E06,
+                           0x00010101,
+                           0x010F0004,
+                           0x00000000,
+                           0x00000000,
+                           0x00000064,
+                           0x00000000,
+                           0x00000000,
+                           0x01020103,
+                           0x0F020102,
+                           0x03030303,
+                           0x03030303,
+                           0x00040000,
+                           0x00005201,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x07070001,
+                           0x00005400,
+                           0x000040A2,
+                           0x00024410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00004410,
+                           0x00000000,
+                           0x00000046,
+                           0x00010000,
+                           0x00000008,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x03000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x04102006,
+                           0x00041020,
+                           0x01C98C98,
+                           0x3F400000,
+                           0x3F3F1F3F,
+                           0x0000001F,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000001,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x76543210,
+                           0x00000098,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00040700,
+                           0x00000000,
+                           0x00000000,
+                           0x00000000,
+                           0x00000002,
+                           0x00000100,
+                           0x00000000,
+                           0x0001F7C0,
+                           0x00020002,
+                           0x00000000,
+                           0x00001142,
+                           0x03020400,
+                           0x00000080,
+                           0x03900390,
+                           0x03900390,
+                           0x03900390,
+                           0x03900390,
+                           0x03900390,
+                           0x03900390,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x00000300,
+                           0x31823FC7,
+                           0x00000000,
+                           0x0C000D3F,
+                           0x30000D3F,
+                           0x300D3F11,
+                           0x01990000,
+                           0x000D3FCC,
+                           0x00000C11,
+                           0x300D3F11,
+                           0x01990000,
+                           0x300C3F11,
+                           0x01990000,
+                           0x300C3F11,
+                           0x01990000,
+                           0x300D3F11,
+                           0x01990000,
+                           0x300D3F11,
+                           0x01990000,
+                           0x20040001,
 };
 
 uint16_t DDRSS_ctlRegNum[] = {
