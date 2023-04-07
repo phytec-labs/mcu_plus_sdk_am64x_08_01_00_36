@@ -44,6 +44,11 @@
 #include "appHwBoardInfo.h"
 #include "appHwBoardInfoSpecific.h"
 #include "appHwError.h"
+#include "ti_drivers_open_close.h" // True
+
+#include <drivers/i2c.h>  // True
+
+#define I2C_READ_SLAVE_ADDR             (0x50U) //True
 
 /*!
  *  \brief We store the board info data here.
@@ -75,7 +80,22 @@ APP_HW_EError_t APP_HW_BOARD_INFO_read(void)
     int32_t status = SystemP_SUCCESS;
     APP_HW_EError_t result = APP_HW_eNO_ERROR;
 
-    status = EEPROM_read(gEepromHandle[CONFIG_EEPROM0], 0, (uint8_t *)&APP_HW_BOARD_INFO_data_g, sizeof(APP_HW_BOARD_INFO_data_g));
+    I2C_Handle      i2cHandle; //True
+    I2C_Transaction i2cTransaction; //True
+
+    //status = EEPROM_read(gEepromHandle[CONFIG_EEPROM0], 0, (uint8_t *)&APP_HW_BOARD_INFO_data_g, sizeof(APP_HW_BOARD_INFO_data_g)); // True commented
+    i2cHandle = gI2cHandle[CONFIG_I2C_EEPROM]; //True
+
+    I2C_Transaction_init(&i2cTransaction); // True
+
+    /* Override with required transaction parameters */ // True
+    i2cTransaction.readBuf      = (uint8_t *)&APP_HW_BOARD_INFO_data_g; // True
+    i2cTransaction.readCount    = sizeof(APP_HW_BOARD_INFO_data_g); // True
+    i2cTransaction.slaveAddress = I2C_READ_SLAVE_ADDR; // True
+
+    status = I2C_transfer(i2cHandle, &i2cTransaction); // True
+
+
 
     if (status != SystemP_SUCCESS)
     {
