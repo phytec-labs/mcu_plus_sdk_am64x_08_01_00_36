@@ -62,6 +62,8 @@ uint8_t aCycDataOutput_g[CYC_DATA_OUTPUT_LEN];
 static void APP_UI_applyPermanentEthData(void);
 static void APP_UI_applyPermanentSnmpData(void);
 
+uint8_t macAddr[APP_HW_BOARD_INFO_MAC_ADDR_LEN_TOTAL]; //True
+
 /*!
 *  <!-- Description: -->
 * \brief
@@ -86,7 +88,14 @@ static void APP_UI_applyPermanentSnmpData(void);
 uint8_t *APP_UI_getMacAddr (
     void)
 {
-    return &APP_HW_BOARD_INFO_getMacInfo().macAddr[0];
+    //return &APP_HW_BOARD_INFO_getMacInfo().macAddr[0]; // True commented
+    macAddr[0] = 0xc1b; // True
+    macAddr[1] = 0xc00; // True
+    macAddr[2] = 0x00; // True
+    macAddr[3] = 0xa7; // True
+    macAddr[4] = 0x3e; // True
+    macAddr[5] = 0xc9; // True
+    return &macAddr[0]; // True
 }
 
 /*!
